@@ -5,6 +5,7 @@ namespace ToDoApp.Services
     public interface IAuthService
     {
         Task<AuthResponseDto> RegisterAsync(RegisterDto dto);
-        Task<string> LoginAsync(LoginDto dto);
+        Task<TokenResponseDto> LoginAsync(LoginDto dto);
+        Task<TokenResponseDto> RefreshTokenAsync(RefreshTokenRequestDto request);
     }
 }

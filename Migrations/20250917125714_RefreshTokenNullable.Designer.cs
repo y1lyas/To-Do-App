@@ -12,8 +12,8 @@ using ToDoApp.Infrastructure;
 namespace ToDoApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250917085915_UserTableAndDbConnection")]
-    partial class UserTableAndDbConnection
+    [Migration("20250917125714_RefreshTokenNullable")]
+    partial class RefreshTokenNullable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,9 @@ namespace ToDoApp.Migrations
 
             modelBuilder.Entity("ToDoApp.Domain.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -43,6 +41,12 @@ namespace ToDoApp.Migrations
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Username")
                         .IsRequired()

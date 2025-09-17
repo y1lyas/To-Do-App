@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using System.Text;
 using ToDoApp.Infrastructure;
+using ToDoApp.Models;
 using ToDoApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +18,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 
-var key = Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]);
+var key = Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!);
 
 builder.Services.AddAuthentication(options =>
 {
@@ -47,6 +48,19 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    if (!context.Roles.Any())
+    {
+        context.Roles.AddRange(
+            new Role { Name = "User" },
+            new Role { Name = "Admin" }
+        );
+        context.SaveChanges();
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

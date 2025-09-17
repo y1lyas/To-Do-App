@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ToDoApp.Domain;
 using ToDoApp.DTOs;
 using ToDoApp.Infrastructure;
+using ToDoApp.Models;
 
 namespace ToDoApp.Services
 {
@@ -27,7 +28,14 @@ namespace ToDoApp.Services
                 Email = dto.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password)
             };
+            var defaultRole = await _context.Roles.FirstOrDefaultAsync(r => r.Name == "User");
+            var userRole = new UserRole
+            {
+                User = user,
+                RoleId = defaultRole.Id 
+            };
 
+            _context.UserRoles.Add(userRole);
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
@@ -39,13 +47,26 @@ namespace ToDoApp.Services
                 CreatedAt = user.CreatedAt
             };
         }
-        public async Task<string> LoginAsync(LoginDto dto)
+        public async Task<TokenResponseDto> LoginAsync(LoginDto dto)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == dto.Username);
             if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
-                throw new Exception("Invalid credentials");
-
-            return _tokenService.CreateToken(user);
+                throw new Exception("Invalid Username or Password.");
+            
+            return await CreateTokenResponse(user);
         }
+        private async Task<TokenResponseDto> CreateTokenResponse(User user)
+        {
+            return new TokenResponseDto { AccessToken = _tokenService.CreateToken(user), RefreshToken = await _tokenService.GenerateAndSaveRefreshTokenAsync(user) };
+        }
+        public async Task<TokenResponseDto> RefreshTokenAsync(RefreshTokenRequestDto request)
+        {
+            var user = await _tokenService.ValidateRefreshTokenAsync(request.UserId, request.RefreshToken);
+            if (user == null)
+                return null;
+
+            return await CreateTokenResponse(user);
+        }
+
     }
 }

@@ -1,9 +1,8 @@
 ﻿using BCrypt.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using ToDoApp.DTOs;
-using ToDoApp.Services;
 using ToDoApp.Domain;
 using ToDoApp.DTOs;
 using ToDoApp.Infrastructure;
@@ -22,12 +21,12 @@ public class AuthController : ControllerBase
     {
         _context = context;
         _tokenService = tokenService;
-    _authService = authService;
+        _authService = authService;
 
-}
+    }
 
-[HttpPost("register")]
-    public async Task<IActionResult> Register(RegisterDto dto)
+    [HttpPost("register")]
+    public async Task<ActionResult<User>> Register(RegisterDto dto)
     {
         try
         {
@@ -41,7 +40,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginDto dto)
+    public async Task<ActionResult<TokenResponseDto>> Login(LoginDto dto)
     {
         try
         {
@@ -52,5 +51,34 @@ public class AuthController : ControllerBase
         {
             return Unauthorized(ex.Message);
         }
+    }
+    [HttpPost("refresh-token")]
+    public async Task<ActionResult<TokenResponseDto>> RefreshToken(RefreshTokenRequestDto request)
+    {
+        try
+        {
+            var tokenResponse = await _authService.RefreshTokenAsync(request);
+            if (tokenResponse is null || tokenResponse.AccessToken is null || tokenResponse.RefreshToken is null)
+                return Unauthorized("Refresh or Access token is null!");
+            return Ok(tokenResponse);
+        }
+        catch (Exception ex)
+        {
+            return Unauthorized(ex.Message);
+        }
+    }
+    [Authorize]
+    [HttpGet]
+    public IActionResult AuthenticatedOnlyEndpoint()
+    {
+        Console.WriteLine("You are authenticated!");
+        return Ok("You are authenticated!");
+    }
+    [Authorize(Roles = "Admin")]
+    [HttpGet("admin-data")]
+    public IActionResult GetAdminData()
+    {
+        Console.WriteLine("You are an admin!");
+        return Ok("You are an admin!");
     }
 }
