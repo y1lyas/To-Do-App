@@ -20,5 +20,6 @@ namespace ToDoApp.Domain
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpiryTime { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
+        public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
     }
 }

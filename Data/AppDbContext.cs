@@ -11,6 +11,8 @@ namespace ToDoApp.Infrastructure
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<TaskItem> Tasks { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +33,12 @@ namespace ToDoApp.Infrastructure
                 .HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId);
+
+            modelBuilder.Entity<TaskItem>()
+                  .HasOne(t => t.User)
+                  .WithMany(u => u.Tasks)
+                  .HasForeignKey(t => t.UserId);
+
         }
 
     }
