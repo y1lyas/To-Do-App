@@ -1,6 +1,6 @@
 ﻿using ToDoApp.Domain;
 
-namespace ToDoApp.Services
+namespace ToDoApp.Services.Auth
 {
     public interface ITokenService
     {

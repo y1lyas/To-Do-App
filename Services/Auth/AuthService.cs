@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ToDoApp.Domain;
-using ToDoApp.DTOs;
+using ToDoApp.DTOs.Auth;
 using ToDoApp.Infrastructure;
 using ToDoApp.Models;
 
-namespace ToDoApp.Services
+namespace ToDoApp.Services.Auth
 {
     public class AuthService : IAuthService
     {

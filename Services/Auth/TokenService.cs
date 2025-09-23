@@ -9,7 +9,7 @@ using ToDoApp.Domain;
 using ToDoApp.Infrastructure;
 
 
-namespace ToDoApp.Services
+namespace ToDoApp.Services.Auth
 {
     public class TokenService : ITokenService
     {
@@ -61,7 +61,7 @@ namespace ToDoApp.Services
             user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);  
             await _context.SaveChangesAsync();
 
-            return (refreshToken);
+            return refreshToken;
         }
 
         public string GenerateRefreshToken()

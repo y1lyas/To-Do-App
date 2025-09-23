@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using ToDoApp.Domain;
-using ToDoApp.DTOs;
+using ToDoApp.DTOs.Auth;
 using ToDoApp.Infrastructure;
-using ToDoApp.Services;
+using ToDoApp.Services.Auth;
 
 [ApiController]
 [Route("api/[controller]")]

@@ -6,6 +6,7 @@ using System.Text;
 using ToDoApp.Infrastructure;
 using ToDoApp.Models;
 using ToDoApp.Services;
+using ToDoApp.Services.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddOpenApi("v1");
 
+builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
