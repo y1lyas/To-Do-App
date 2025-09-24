@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 //using ToDoApp.Domain;
 using ToDoApp.DTOs.Task;
 using ToDoApp.Infrastructure;
+using ToDoApp.Mapper;
 using ToDoApp.Models;
 
 namespace ToDoApp.Services
@@ -18,7 +20,6 @@ namespace ToDoApp.Services
 
         public async Task<TaskResponseDto> CreateAsync(Guid userId, TaskCreateDto dto)
         {
-
             var task = new TaskItem
             {
                 Id = Guid.NewGuid(),
@@ -33,28 +34,10 @@ namespace ToDoApp.Services
             };
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
-
-            var createdTask = await _context.Tasks
-                .Include(t => t.User)
-                .Include(t => t.Category)
-                .FirstOrDefaultAsync(t => t.Id == task.Id);
-
-            return new TaskResponseDto
-            {
-                Id = createdTask.Id,
-                Title = createdTask.Title,
-                Description = createdTask.Description,
-                DueDate = createdTask.DueDate,
-                IsCompleted = createdTask.IsCompleted,
-                CreatedAt = createdTask.CreatedAt,
-                Priority = createdTask.Priority,
-                UserId = createdTask.UserId,
-                Username = createdTask.User.Username,
-                CategoryId = createdTask.CategoryId,
-                CategoryName = createdTask.Category?.Name
-            };
+            await _context.Entry(task).Reference(t => t.User).LoadAsync();
+            await _context.Entry(task).Reference(t => t.Category).LoadAsync();
+            return TaskMapper.MapToDto(task);
         }
-
 
         public async Task<bool> DeleteAsync(Guid userId, Guid taskId)
         {
@@ -66,54 +49,75 @@ namespace ToDoApp.Services
             return true;
         }
 
-        public async Task<IEnumerable<TaskResponseDto>> GetAllAsync()
+        public async Task<IEnumerable<TaskResponseDto>> GetAllAsync( Guid? userId = null, Guid? categoryId = null,string ? searchTitle = null,bool? isCompleted = null,string? sortBy = null,bool ascending = true,int page = 1,int pageSize = 20)
         {
-            return await _context.Tasks
-                .Include(t => t.Category)
-                 .Select(t => new TaskResponseDto
-                 {
-                     Id = t.Id,
-                     Title = t.Title,
-                     Description = t.Description,
-                     DueDate = t.DueDate,
-                     IsCompleted = t.IsCompleted,
-                     CreatedAt = DateTime.UtcNow,
-                     Priority = t.Priority,
-                     UserId = t.UserId,
-                     Username = t.User.Username,
-                     CategoryId = t.CategoryId,
-                     CategoryName = t.Category.Name
-                 })
-                 .ToListAsync();
+            var query = _context.Tasks
+        .Include(t => t.User)
+        .Include(t => t.Category)
+        .AsQueryable();
+
+            if (userId.HasValue)
+                query = query.Where(t => t.UserId == userId.Value);
+            if (!string.IsNullOrWhiteSpace(searchTitle))
+                query = query.Where(t => t.Title.Contains(searchTitle));
+            if (categoryId.HasValue)
+                query = query.Where(t => t.CategoryId == categoryId.Value);
+            if (isCompleted.HasValue)
+                query = query.Where(t => t.IsCompleted == isCompleted.Value);
+
+            query = sortBy switch
+            {
+                "Title" => ascending ? query.OrderBy(t => t.Title) : query.OrderByDescending(t => t.Title),
+                "DueDate" => ascending ? query.OrderBy(t => t.DueDate) : query.OrderByDescending(t => t.DueDate),
+                "Priority" => ascending ? query.OrderBy(t => t.Priority) : query.OrderByDescending(t => t.Priority),
+                _ => query.OrderBy(t => t.CreatedAt)
+            };
+
+            query = query.Skip((page - 1) * pageSize).Take(pageSize);
+
+            var tasks = await query.AsNoTracking().ToListAsync();
+
+            return tasks.Select(TaskMapper.MapToDto);
+
         }
 
-        public async Task<IEnumerable<TaskResponseDto>> GetByUserAsync(Guid userId)
+        public async Task<IEnumerable<TaskResponseDto>> GetByUserAsync(Guid userId,Guid? categoryId = null, string? searchTitle = null,bool? isCompleted = null,string? sortBy = null,bool ascending = true, int page = 1, int pageSize = 20)
         {
-            var tasks = await _context.Tasks
-               .Where(t => t.UserId == userId)
-               .Include(t => t.Category)
-               .Include(t => t.User)
-               .ToListAsync();
+            var query = _context.Tasks
+              .Where(t => t.UserId == userId)
+              .Include(t => t.User)
+              .Include(t => t.Category)
+              .AsQueryable();
 
-            return tasks.Select(t => new TaskResponseDto
+            if (!string.IsNullOrWhiteSpace(searchTitle))
+                query = query.Where(t => t.Title.Contains(searchTitle));
+            if (categoryId.HasValue)
+                query = query.Where(t => t.CategoryId == categoryId.Value);
+            if (isCompleted.HasValue)
+                query = query.Where(t => t.IsCompleted == isCompleted.Value);
+
+            query = sortBy switch
             {
-                Id = t.Id,
-                Title = t.Title,
-                Description = t.Description,
-                CreatedAt = t.CreatedAt,
-                DueDate = t.DueDate,
-                Priority = t.Priority,
-                IsCompleted = t.IsCompleted,
-                UserId = t.UserId,
-                Username = t.User.Username,
-                CategoryId = t.CategoryId,
-                CategoryName = t.Category?.Name
-            });
+                "Title" => ascending ? query.OrderBy(t => t.Title) : query.OrderByDescending(t => t.Title),
+                "DueDate" => ascending ? query.OrderBy(t => t.DueDate) : query.OrderByDescending(t => t.DueDate),
+                "Priority" => ascending ? query.OrderBy(t => t.Priority) : query.OrderByDescending(t => t.Priority),
+                _ => query.OrderBy(t => t.CreatedAt)
+            };
+
+            query = query.Skip((page - 1) * pageSize).Take(pageSize);
+
+
+            var tasks = await query.ToListAsync();
+            return tasks.Select(TaskMapper.MapToDto);
         }
 
         public async Task<TaskResponseDto?> UpdateAsync(Guid userId, Guid taskId, TaskUpdateDto dto)
         {
-            var task = await _context.Tasks.Include(t => t.User).Include(t => t.Category).FirstOrDefaultAsync(t => t.Id == taskId && t.UserId == userId);
+            var task = await _context.Tasks
+              .Include(t => t.User)
+              .Include(t => t.Category)
+              .FirstOrDefaultAsync(t => t.Id == taskId && t.UserId == userId);
+
             if (task == null) return null;
 
             task.Title = dto.Title ?? task.Title;
@@ -124,23 +128,36 @@ namespace ToDoApp.Services
             task.CategoryId = dto.CategoryId;
 
             await _context.SaveChangesAsync();
-            // Navigation güncelledik, yoksa Category.Name null gelir
+
+            // Navigation propertyleri tekrar yükle
             await _context.Entry(task).Reference(t => t.Category).LoadAsync();
             await _context.Entry(task).Reference(t => t.User).LoadAsync();
 
-            return new TaskResponseDto
-            {
-                Id = task.Id,
-                Title = task.Title,
-                Description = task.Description,
-                DueDate = task.DueDate,
-                IsCompleted = task.IsCompleted,
-                Priority = task.Priority,
-                UserId = task.UserId,
-                Username = task.User.Username,
-                CategoryId = task.CategoryId,
-                CategoryName = task.Category?.Name
-            };
+            return TaskMapper.MapToDto(task);
+        }
+        public async Task<int> DeleteCompletedTasksAsync(Guid userId)
+        {
+            var completedTasks = await _context.Tasks
+                .Where(t => t.UserId == userId && t.IsCompleted)
+                .ToListAsync();
+
+            if (!completedTasks.Any())
+                return 0;
+
+            _context.Tasks.RemoveRange(completedTasks);
+            await _context.SaveChangesAsync();
+
+            return completedTasks.Count;
+        }
+
+        public async Task<TaskResponseDto?> GetTaskByIdAsync(Guid taskId)
+        {
+             var task = await _context.Tasks
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .FirstOrDefaultAsync(t => t.Id == taskId);
+
+            return TaskMapper.MapToDto(task);
         }
     }
 }
