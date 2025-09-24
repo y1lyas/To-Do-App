@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ToDoApp.Models
+namespace ToDoApp.Models.Auth
 {
     public class Role
     {

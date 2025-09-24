@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using ToDoApp.Models;
 
-namespace ToDoApp.Domain
+namespace ToDoApp.Models.Auth
 {
     public class User
     {

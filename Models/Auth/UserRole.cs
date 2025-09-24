@@ -1,7 +1,6 @@
 ﻿using System.Data;
-using ToDoApp.Domain;
 
-namespace ToDoApp.Models
+namespace ToDoApp.Models.Auth
 {
     public class UserRole
     {

@@ -18,9 +18,9 @@ namespace ToDoApp.Api.Controllers
         {
             _taskService = taskService;
         }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetTask(Guid id)
+        [Authorize]
+        [HttpGet("by-user")]
+        public async Task<IActionResult> GetTask()
         {
             var userId = GetUserIdFromToken();
             if (userId == null) return Unauthorized();
@@ -28,16 +28,19 @@ namespace ToDoApp.Api.Controllers
             var tasks = await _taskService.GetByUserAsync(userId);
             return Ok(tasks);
         }
-        [Authorize(Roles = "User,Admin")]
-        [HttpPost]
+        [Authorize]
+        [HttpPost("add-task")]
         public async Task<IActionResult> CreateTask([FromBody] TaskCreateDto dto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var userId = GetUserIdFromToken();
             if (userId == null) return Unauthorized();
             var task = await _taskService.CreateAsync(userId, dto);
             return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
         }
-        [Authorize(Roles = "User,Admin")]
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(Guid id,TaskUpdateDto dto)
         {
@@ -49,7 +52,7 @@ namespace ToDoApp.Api.Controllers
 
             return Ok(updated);
         }
-        [Authorize(Roles = "User,Admin")]
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(Guid id)
         {
@@ -61,7 +64,7 @@ namespace ToDoApp.Api.Controllers
 
             return NoContent();
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {

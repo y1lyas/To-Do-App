@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ToDoApp.Domain;
 using ToDoApp.Models;
+using ToDoApp.Models.Auth;
 
 namespace ToDoApp.Infrastructure
 {
@@ -12,6 +12,7 @@ namespace ToDoApp.Infrastructure
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<TaskItem> Tasks { get; set; }
+        public DbSet<TaskCategory> TaskCategories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,6 +39,19 @@ namespace ToDoApp.Infrastructure
                   .HasOne(t => t.User)
                   .WithMany(u => u.Tasks)
                   .HasForeignKey(t => t.UserId);
+
+            modelBuilder.Entity<TaskItem>()
+                  .Property(t => t.CreatedAt)
+                  .HasDefaultValueSql("NOW()");
+            modelBuilder.Entity<TaskItem>()
+                  .Property(t => t.Priority)
+                  .HasDefaultValue(TaskPriority.Medium);
+
+            modelBuilder.Entity<TaskItem>()
+                  .HasOne(t => t.Category)
+                  .WithMany(c => c.Tasks)
+                  .HasForeignKey(t => t.CategoryId)
+                  .OnDelete(DeleteBehavior.SetNull);
 
         }
 

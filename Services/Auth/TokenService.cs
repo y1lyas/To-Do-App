@@ -5,8 +5,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using ToDoApp.Domain;
 using ToDoApp.Infrastructure;
+using ToDoApp.Models.Auth;
 
 
 namespace ToDoApp.Services.Auth

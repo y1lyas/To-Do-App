@@ -5,6 +5,7 @@ using Scalar.AspNetCore;
 using System.Text;
 using ToDoApp.Infrastructure;
 using ToDoApp.Models;
+using ToDoApp.Models.Auth;
 using ToDoApp.Services;
 using ToDoApp.Services.Auth;
 
@@ -18,6 +19,7 @@ builder.Services.AddOpenApi("v1");
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!);

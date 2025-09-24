@@ -1,4 +1,4 @@
-﻿using ToDoApp.Domain;
+﻿using ToDoApp.Models.Auth;
 
 namespace ToDoApp.Services.Auth
 {
