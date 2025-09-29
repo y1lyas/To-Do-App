@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using System.Globalization;
 //using ToDoApp.Domain;
 using ToDoApp.DTOs.Task;
+using ToDoApp.Extensions;
 using ToDoApp.Infrastructure;
 using ToDoApp.Mapper;
 using ToDoApp.Models;
@@ -49,65 +51,33 @@ namespace ToDoApp.Services
             return true;
         }
 
-        public async Task<IEnumerable<TaskResponseDto>> GetAllAsync( Guid? userId = null, Guid? categoryId = null,string ? searchTitle = null,bool? isCompleted = null,string? sortBy = null,bool ascending = true,int page = 1,int pageSize = 20)
+        public async Task<IEnumerable<TaskResponseDto>> GetAllAsync( Guid? userId = null, Guid? categoryId = null,string ? searchTitle = null,bool? isCompleted = null,string? sortBy = null,bool ascending = true,int page = 1,int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
         {
-            var query = _context.Tasks
+            var tasksQuery = _context.Tasks
         .Include(t => t.User)
         .Include(t => t.Category)
         .AsQueryable();
 
-            if (userId.HasValue)
-                query = query.Where(t => t.UserId == userId.Value);
-            if (!string.IsNullOrWhiteSpace(searchTitle))
-                query = query.Where(t => t.Title.Contains(searchTitle));
-            if (categoryId.HasValue)
-                query = query.Where(t => t.CategoryId == categoryId.Value);
-            if (isCompleted.HasValue)
-                query = query.Where(t => t.IsCompleted == isCompleted.Value);
+            tasksQuery = tasksQuery.ApplyFilters(userId, categoryId, searchTitle, isCompleted, sortBy, ascending, page, pageSize, dueDateFrom, dueDateTo);
 
-            query = sortBy switch
-            {
-                "Title" => ascending ? query.OrderBy(t => t.Title) : query.OrderByDescending(t => t.Title),
-                "DueDate" => ascending ? query.OrderBy(t => t.DueDate) : query.OrderByDescending(t => t.DueDate),
-                "Priority" => ascending ? query.OrderBy(t => t.Priority) : query.OrderByDescending(t => t.Priority),
-                _ => query.OrderBy(t => t.CreatedAt)
-            };
-
-            query = query.Skip((page - 1) * pageSize).Take(pageSize);
-
-            var tasks = await query.AsNoTracking().ToListAsync();
+            var tasks = await tasksQuery.AsNoTracking().ToListAsync();
 
             return tasks.Select(TaskMapper.MapToDto);
 
         }
 
-        public async Task<IEnumerable<TaskResponseDto>> GetByUserAsync(Guid userId,Guid? categoryId = null, string? searchTitle = null,bool? isCompleted = null,string? sortBy = null,bool ascending = true, int page = 1, int pageSize = 20)
+        public async Task<IEnumerable<TaskResponseDto>> GetByUserAsync(Guid userId, Guid? categoryId = null, string? searchTitle = null, bool? isCompleted = null, string? sortBy = null, bool ascending = true, int page = 1, int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
         {
-            var query = _context.Tasks
+            var tasksQuery = _context.Tasks
               .Where(t => t.UserId == userId)
               .Include(t => t.User)
               .Include(t => t.Category)
               .AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(searchTitle))
-                query = query.Where(t => t.Title.Contains(searchTitle));
-            if (categoryId.HasValue)
-                query = query.Where(t => t.CategoryId == categoryId.Value);
-            if (isCompleted.HasValue)
-                query = query.Where(t => t.IsCompleted == isCompleted.Value);
-
-            query = sortBy switch
-            {
-                "Title" => ascending ? query.OrderBy(t => t.Title) : query.OrderByDescending(t => t.Title),
-                "DueDate" => ascending ? query.OrderBy(t => t.DueDate) : query.OrderByDescending(t => t.DueDate),
-                "Priority" => ascending ? query.OrderBy(t => t.Priority) : query.OrderByDescending(t => t.Priority),
-                _ => query.OrderBy(t => t.CreatedAt)
-            };
-
-            query = query.Skip((page - 1) * pageSize).Take(pageSize);
+            tasksQuery = tasksQuery.ApplyFilters(userId, categoryId, searchTitle, isCompleted, sortBy, ascending, page, pageSize, dueDateFrom, dueDateTo);
 
 
-            var tasks = await query.ToListAsync();
+            var tasks = await tasksQuery.ToListAsync();  
             return tasks.Select(TaskMapper.MapToDto);
         }
 

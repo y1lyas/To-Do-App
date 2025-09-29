@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ToDoApp.Extensions;
 using ToDoApp.Models;
 using ToDoApp.Models.Auth;
 
@@ -17,6 +18,7 @@ namespace ToDoApp.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Role>()

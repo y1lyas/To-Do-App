@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using System.Security.Claims;
 using ToDoApp.DTOs.Task;
 using ToDoApp.Models;
@@ -27,7 +28,9 @@ namespace ToDoApp.Api.Controllers
             [FromQuery] string? sortBy,
             [FromQuery] bool ascending = true,
             [FromQuery] int page = 1,
-            [FromQuery] int pageSize = 20)
+            [FromQuery] int pageSize = 20,
+            [FromQuery] DateTime? dueDateFrom = null,
+            [FromQuery] DateTime? dueDateTo = null)
         {
             var userId = GetUserIdFromToken();
             if (userId == null) return Unauthorized();
@@ -40,7 +43,9 @@ namespace ToDoApp.Api.Controllers
                 sortBy,
                 ascending,
                 page,
-                pageSize);
+                pageSize,
+                dueDateFrom,
+                dueDateTo);
 
             return Ok(tasks);
         }
@@ -117,7 +122,9 @@ namespace ToDoApp.Api.Controllers
           [FromQuery] string? sortBy = null,
           [FromQuery] bool ascending = true,
           [FromQuery] int page = 1,
-          [FromQuery] int pageSize = 20)
+          [FromQuery] int pageSize = 20,
+          [FromQuery] DateTime? dueDateFrom = null,
+          [FromQuery] DateTime? dueDateTo = null)
         {
             var tasks = await _taskService.GetAllAsync(
                  userId,
@@ -127,7 +134,9 @@ namespace ToDoApp.Api.Controllers
                  sortBy,
                  ascending,
                  page,
-                 pageSize);
+                 pageSize,
+                 dueDateFrom,
+                 dueDateTo);
 
             return Ok(tasks);
         }

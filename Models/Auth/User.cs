@@ -20,5 +20,8 @@ namespace ToDoApp.Models.Auth
         public DateTime? RefreshTokenExpiryTime { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
         public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
+        public Guid? ManagerId { get; set; }
+        public User? Manager { get; set; }
+        public ICollection<User> Subordinates { get; set; } = new List<User>();
     }
 }
