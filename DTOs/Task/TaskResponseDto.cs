@@ -17,5 +17,6 @@ namespace ToDoApp.DTOs.Task
         public Guid? CategoryId { get; set; }
         public string? CategoryName { get; set; }
 
+
     }
 }

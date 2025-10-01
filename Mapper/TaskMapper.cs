@@ -21,7 +21,7 @@ namespace ToDoApp.Mapper
                 UserId = task.UserId,
                 Username = task.User?.Username,
                 CategoryId = task.CategoryId,
-                CategoryName = task.Category?.Name
+                CategoryName = task.Category?.Name,
             };
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ToDoApp.Models.Auth
 {
@@ -18,10 +19,17 @@ namespace ToDoApp.Models.Auth
 
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpiryTime { get; set; }
+        [JsonIgnore]
         public ICollection<UserRole> UserRoles { get; set; }
+        [JsonIgnore]
         public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
         public Guid? ManagerId { get; set; }
+        [JsonIgnore]
         public User? Manager { get; set; }
+        [JsonIgnore]
         public ICollection<User> Subordinates { get; set; } = new List<User>();
+        [JsonIgnore]
+        public ICollection<TaskAssignment> TaskAssignments { get; set; } = new List<TaskAssignment>();
+
     }
 }

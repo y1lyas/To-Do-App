@@ -5,10 +5,14 @@ namespace ToDoApp.Extensions
     public static class TaskQueryExtensions
     {
         public static IQueryable<TaskItem> ApplyFilters(
-       this IQueryable<TaskItem> query, Guid? userId = null, Guid? categoryId = null, string? searchTitle = null, bool? isCompleted = null, string? sortBy = null, bool ascending = true, int page = 1, int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
+       this IQueryable<TaskItem> query, string requesterRole, Guid? userId = null, Guid? categoryId = null, string? searchTitle = null, bool? isCompleted = null, string? sortBy = null, bool ascending = true, int page = 1, int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
         {
-            if (userId.HasValue)
+            if ((requesterRole.Equals("Admin", StringComparison.OrdinalIgnoreCase) ||
+             requesterRole.Equals("Captain", StringComparison.OrdinalIgnoreCase))
+            && userId.HasValue)
+            {
                 query = query.Where(t => t.UserId == userId.Value);
+            }
             if (!string.IsNullOrWhiteSpace(searchTitle))
                 query = query.Where(t => t.Title.Contains(searchTitle));
             if (categoryId.HasValue)

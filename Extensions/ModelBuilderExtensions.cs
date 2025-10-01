@@ -5,6 +5,6 @@ namespace ToDoApp.Extensions
 {
     public static class ModelBuilderExtensions
     {
-        
+        // KULLANACAGIM
     }
 }

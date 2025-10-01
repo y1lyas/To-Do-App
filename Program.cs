@@ -60,7 +60,8 @@ using (var scope = app.Services.CreateScope())
     {
         context.Roles.AddRange(
             new Role { Name = "User" },
-            new Role { Name = "Admin" }
+            new Role { Name = "Admin" },
+            new Role { Name = "Captain" }
         );
         context.SaveChanges();
     }
