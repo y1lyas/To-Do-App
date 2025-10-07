@@ -8,6 +8,7 @@ using ToDoApp.Infrastructure;
 using ToDoApp.Mapper;
 using ToDoApp.Models;
 using ToDoApp.Models.Auth;
+using TaskStatus = ToDoApp.Models.TaskStatus;
 
 namespace ToDoApp.Services
 {
@@ -31,20 +32,32 @@ namespace ToDoApp.Services
                 IsCompleted = false,
                 CreatedAt = DateTime.UtcNow,
                 Priority = dto.Priority,
-                UserId = userId,
                 CreatedById = userId,
                 CategoryId = dto.CategoryId
             };
+
+            task.Assignments.Add(new TaskAssignment
+            {
+                TaskId = task.Id,
+                UserId = userId,
+                AssignedAt = DateTime.UtcNow
+            });
+
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
-            await _context.Entry(task).Reference(t => t.User).LoadAsync();
+
+            await _context.Entry(task).Collection(t => t.Assignments).LoadAsync();
             await _context.Entry(task).Reference(t => t.Category).LoadAsync();
+            await _context.Entry(task).Reference(t => t.CreatedBy).LoadAsync();
+
             return TaskMapper.MapToDto(task);
         }
 
         public async Task<bool> DeleteAsync(Guid userId, Guid taskId)
         {
-            var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == taskId && t.UserId == userId);
+            var task = await _context.Tasks
+        .FirstOrDefaultAsync(t => t.Id == taskId && t.CreatedById == userId);
+
             if (task == null) return false;
 
             _context.Tasks.Remove(task);
@@ -55,9 +68,11 @@ namespace ToDoApp.Services
         public async Task<IEnumerable<TaskResponseDto>> GetAllAsync( Guid? userId = null, Guid? categoryId = null,string ? searchTitle = null,bool? isCompleted = null,string? sortBy = null,bool ascending = true,int page = 1,int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
         {
             var tasksQuery = _context.Tasks
-        .Include(t => t.User)
-        .Include(t => t.Category)
-        .AsQueryable();
+            .Include(t => t.Assignments)
+            .ThenInclude(a => a.User)
+            .Include(t => t.Category)
+            .Include(t => t.CreatedBy)
+            .AsQueryable();
 
             tasksQuery = tasksQuery.ApplyFilters(requesterRole: "Admin", userId: userId, categoryId, searchTitle, isCompleted, sortBy, ascending, page, pageSize, dueDateFrom, dueDateTo);
 
@@ -69,24 +84,26 @@ namespace ToDoApp.Services
 
         public async Task<IEnumerable<TaskResponseDto>> GetByUserAsync(Guid requesterId, Guid? categoryId = null, string? searchTitle = null, bool? isCompleted = null, string? sortBy = null, bool ascending = true, int page = 1, int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
         {
-            var tasksQuery = _context.Tasks
-              .Where(t => t.UserId == requesterId)
-              .Include(t => t.User) 
-              .Include(t => t.Category)
-              .AsQueryable();
+            var query = _context.Tasks
+              .Where(t => t.Assignments.Any(a => a.UserId == requesterId) && t.Status != TaskStatus.Archived && t.Status != TaskStatus.Deleted )
+               .Include(a => a.Assignments)
+                  .ThenInclude(t => t.User)
+               .Include(t => t.Category)
+               .Include(t => t.CreatedBy)
+               .AsQueryable();
 
-            tasksQuery = tasksQuery.ApplyFilters(requesterRole: "User", userId: null, categoryId, searchTitle, isCompleted, sortBy, ascending, page, pageSize, dueDateFrom, dueDateTo);
+            query = query.ApplyFilters(requesterRole: "User", userId: null, categoryId, searchTitle, isCompleted, sortBy, ascending, page, pageSize, dueDateFrom, dueDateTo);
 
-            var tasks = await tasksQuery.ToListAsync();
+            var tasks = await query.ToListAsync();
             return tasks.Select(TaskMapper.MapToDto);
         }
 
         public async Task<TaskResponseDto?> UpdateAsync(Guid userId, Guid taskId, TaskUpdateDto dto)
         {
             var task = await _context.Tasks
-              .Include(t => t.User)
+              .Include(t => t.Assignments)
               .Include(t => t.Category)
-              .FirstOrDefaultAsync(t => t.Id == taskId && t.UserId == userId);
+              .FirstOrDefaultAsync(t => t.Id == taskId && t.Assignments.Any(a => a.UserId == userId));
 
             if (task == null) return null;
 
@@ -99,31 +116,34 @@ namespace ToDoApp.Services
 
             await _context.SaveChangesAsync();
 
-            // Navigation propertyleri tekrar yükle
+            await _context.Entry(task).Collection(t => t.Assignments).LoadAsync();
             await _context.Entry(task).Reference(t => t.Category).LoadAsync();
-            await _context.Entry(task).Reference(t => t.User).LoadAsync();
+            await _context.Entry(task).Reference(t => t.CreatedBy).LoadAsync();
 
             return TaskMapper.MapToDto(task);
         }
-        public async Task<int> DeleteCompletedTasksAsync(Guid userId)
+        public async Task<int> ArchiveCompletedTasksAsync(Guid userId)
         {
             var completedTasks = await _context.Tasks
-                .Where(t => t.UserId == userId && t.IsCompleted)
+                .Include(t => t.Assignments)
+                .Where(t => t.IsCompleted && t.Status == TaskStatus.Completed && (t.CreatedById == userId || t.Assignments.Any(a => a.UserId == userId)))
                 .ToListAsync();
 
             if (!completedTasks.Any())
                 return 0;
 
-            _context.Tasks.RemoveRange(completedTasks);
-            await _context.SaveChangesAsync();
+            foreach (var task in completedTasks)
+                task.Status = TaskStatus.Archived;
 
+            await _context.SaveChangesAsync();
             return completedTasks.Count;
         }
 
         public async Task<TaskResponseDto?> GetTaskByIdAsync(Guid taskId)
         {
              var task = await _context.Tasks
-                .Include(t => t.User)
+                .Include(t => t.Assignments)
+                .ThenInclude(a => a.User)
                 .Include(t => t.Category)
                 .FirstOrDefaultAsync(t => t.Id == taskId);
 
@@ -138,9 +158,11 @@ namespace ToDoApp.Services
                 .ToListAsync();
 
             IQueryable<TaskItem> query = _context.Tasks
-                .Where(t => subordinateIds.Contains(t.UserId))
-                .Include(t => t.User)
-                .Include(t => t.Category);
+                .Where(t => t.Assignments.Any( a => subordinateIds.Contains(a.UserId)))
+                .Include(t => t.Assignments)
+                .ThenInclude(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.CreatedBy);
 
             query = query.ApplyFilters(
                 requesterRole: "Captain",
@@ -198,7 +220,11 @@ namespace ToDoApp.Services
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
 
-            await _context.Entry(task).Collection(t => t.Assignments).LoadAsync();
+            await _context.Entry(task)
+                .Collection(t => t.Assignments)
+                .Query()
+                .Include(a => a.User)
+                .LoadAsync();
             await _context.Entry(task).Reference(t => t.Category).LoadAsync();
             await _context.Entry(task).Reference(t => t.CreatedBy).LoadAsync();
 
@@ -256,5 +282,50 @@ namespace ToDoApp.Services
 
             return tasks.Select(TaskMapper.MapToDto);
         }
+        public async Task<TaskResponseDto?> AssignUserToTaskAsync(Guid taskId, Guid userId)
+        {
+            var task = await _context.Tasks
+                .Include(t => t.Assignments)
+                .ThenInclude(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.CreatedBy)
+                .FirstOrDefaultAsync(t => t.Id == taskId);
+
+            if (task == null) return null;
+
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null) return null;
+
+            if (task.Assignments.Any(a => a.UserId == userId)) return TaskMapper.MapToDto(task);
+
+            task.Assignments.Add(new TaskAssignment
+            {
+                TaskId = task.Id,
+                UserId = userId
+            });
+
+            await _context.SaveChangesAsync();
+            return TaskMapper.MapToDto(task);
+        }
+        public async Task<TaskResponseDto?> RemoveUserFromTaskAsync(Guid taskId, Guid userId)
+        {
+            var assignment = await _context.TaskAssignments
+                .FirstOrDefaultAsync(a => a.TaskId == taskId && a.UserId == userId);
+
+            if (assignment == null) return null;
+
+            _context.TaskAssignments.Remove(assignment);
+            await _context.SaveChangesAsync();
+
+            var task = await _context.Tasks
+                .Include(t => t.Assignments)
+                .ThenInclude(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.CreatedBy)
+                .FirstOrDefaultAsync(t => t.Id == taskId);
+
+            return task == null ? null : TaskMapper.MapToDto(task);
+        }
+
     }
 }

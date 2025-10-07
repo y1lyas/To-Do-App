@@ -12,11 +12,6 @@ namespace ToDoApp.Models
         public bool IsCompleted { get; set; }
         public DateTime CreatedAt { get; set; }
         public TaskPriority Priority { get; set; }
-
-        public Guid UserId { get; set; }
-        [JsonIgnore]
-        public User User { get; set; } = null!;
-
         public Guid? CategoryId { get; set; }
         [JsonIgnore]
         public TaskCategory? Category { get; set; }
@@ -24,7 +19,10 @@ namespace ToDoApp.Models
         public Guid CreatedById { get; set; }
         [JsonIgnore]
         public User CreatedBy { get; set; } = null!;
-        [JsonIgnore]
+
+        public TaskStatus Status { get; set; } = TaskStatus.Active;
+
+        [JsonIgnore]    
         public ICollection<TaskAssignment> Assignments { get; set; } = new List<TaskAssignment>();
 
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System.Security.Claims;
 using ToDoApp.DTOs.Task;
@@ -19,9 +20,10 @@ namespace ToDoApp.Api.Controllers
         {
             _taskService = taskService;
         }
+
         [Authorize]
         [HttpGet("by-user")]
-        public async Task<IActionResult> GetTask(
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetTask(
             [FromQuery] string? searchTitle,
             [FromQuery] Guid? categoryId,
             [FromQuery] bool? isCompleted,
@@ -53,7 +55,7 @@ namespace ToDoApp.Api.Controllers
 
         [Authorize]
         [HttpPost("add-task")]
-        public async Task<IActionResult> CreateTask([FromBody] TaskCreateDto dto, Guid? userId = null)
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> CreateTask([FromBody] TaskCreateDto dto, Guid? userId = null)
         {
 
             var currentUserId = GetUserIdFromToken();
@@ -74,8 +76,8 @@ namespace ToDoApp.Api.Controllers
         }
 
         [Authorize]
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTask(Guid id,TaskUpdateDto dto)
+        [HttpPut("task-by-{id}")]
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> UpdateTask(Guid id,TaskUpdateDto dto)
         {
             var userId = GetUserIdFromToken();
             if (userId == null) return Unauthorized();
@@ -87,8 +89,8 @@ namespace ToDoApp.Api.Controllers
         }
 
         [Authorize]
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTask(Guid id)
+        [HttpDelete("task-by{id}")]
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> DeleteTask(Guid id)
         {
             var userId = GetUserIdFromToken();
             if (userId == null) return Unauthorized();
@@ -98,23 +100,39 @@ namespace ToDoApp.Api.Controllers
 
             return NoContent();
         }
-
-        [HttpDelete("completed")]
-        public async Task<IActionResult> DeleteCompletedTasks()
+        [Authorize]
+        [HttpPost("{taskId}/assign/{userId}")]
+        public async Task<ActionResult<TaskResponseDto>> AssignUserToTask(Guid taskId, Guid userId)
+        {
+            var task = await _taskService.AssignUserToTaskAsync(taskId, userId);
+            if (task == null) return NotFound();
+            return Ok(task);
+        }
+        [Authorize]
+        [HttpDelete("{taskId}/assign/{userId}")]
+        public async Task<ActionResult<TaskResponseDto>> RemoveUserFromTask(Guid taskId, Guid userId)
+        {
+            var task = await _taskService.RemoveUserFromTaskAsync(taskId, userId);
+            if (task == null) return NotFound();
+            return Ok(task);
+        }
+        [Authorize]
+        [HttpDelete("archive-completed")]
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> ArchiveCompletedTasks()
         {
             var userId = GetUserIdFromToken();
 
-            var deletedCount = await _taskService.DeleteCompletedTasksAsync(userId);
+            var archivedCount = await _taskService.ArchiveCompletedTasksAsync(userId);
 
-            if (deletedCount == 0)
-                return NotFound(new { message = "Tamamlanmış görev bulunamadı." });
+            if (archivedCount == 0)
+                return NotFound(new { message = "No completed tasks available for archiving." });
 
-            return Ok(new { message = $"{deletedCount} tamamlanmış görev silindi." });
+            return Ok(new { message = $"{archivedCount} completed task(s) archived successfully." });
         }
 
         [HttpGet("Captain-Only")]
         [Authorize(Roles = "Captain")]
-        public async Task<IActionResult> GetSubordinatesTasks(
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetSubordinatesTasks(
             [FromQuery] Guid? userId,
             [FromQuery] Guid? categoryId,
             [FromQuery] string? searchTitle,
@@ -147,7 +165,7 @@ namespace ToDoApp.Api.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpGet("Admin-only")]
-        public async Task<IActionResult> GetAll(
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetAll(
           [FromQuery] Guid? userId = null,
           [FromQuery] string? searchTitle = null,
           [FromQuery] Guid? categoryId = null,
@@ -176,12 +194,12 @@ namespace ToDoApp.Api.Controllers
 
         [HttpDelete("admin/{taskId}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AdminDeleteTask(Guid taskId)
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> AdminDeleteTask(Guid taskId)
         {
             var task = await _taskService.GetTaskByIdAsync(taskId);
             if (task == null) return NotFound();
 
-            var result = await _taskService.DeleteAsync(task.UserId, taskId);
+            var result = await _taskService.DeleteAsync(task.CreatedById, taskId);
             if (!result) return NotFound();
 
             return Ok(new { message = "Task deleted by Admin." });
@@ -189,20 +207,20 @@ namespace ToDoApp.Api.Controllers
 
         [HttpPut("admin/{taskId}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AdminUpdateTask(Guid taskId, TaskUpdateDto dto)
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> AdminUpdateTask(Guid taskId, TaskUpdateDto dto)
         {
             var task = await _taskService.GetTaskByIdAsync(taskId);
             if (task == null) return NotFound();
 
-            var updatedTask = await _taskService.UpdateAsync(task.UserId, taskId, dto);
+            var updatedTask = await _taskService.UpdateAsync(task.CreatedById, taskId, dto);
             if (updatedTask == null) return NotFound();
 
             return Ok(updatedTask);
         }
 
-    [HttpPost("assign")]
+    [HttpPost("Captain-Only-assign")]
     [Authorize(Roles = "Captain")]
-    public async Task<IActionResult> CreateTaskForSubordinates([FromBody] TaskCreateDto dto, [FromQuery] List<Guid>? subordinateIds)
+    public async Task<ActionResult<IEnumerable<TaskResponseDto>>> CreateTaskForSubordinates([FromBody] TaskCreateDto dto, [FromQuery] List<Guid>? subordinateIds)
     {
             var captainId = GetUserIdFromToken();
         var result = await _taskService.CreateTaskForSubordinatesAsync(captainId, dto, subordinateIds);
@@ -211,9 +229,9 @@ namespace ToDoApp.Api.Controllers
     } 
 
 
-    [HttpPut("subordinate/{taskId}")]
+    [HttpPut("update-subordinate/{taskId}")]
     [Authorize(Roles = "Captain")]
-    public async Task<IActionResult> UpdateSubordinateTask(Guid taskId, [FromBody] TaskUpdateDto dto)
+    public async Task<ActionResult<IEnumerable<TaskResponseDto>>> UpdateSubordinateTask(Guid taskId, [FromBody] TaskUpdateDto dto)
     {
         var captainId = GetUserIdFromToken();
         var result = await _taskService.UpdateSubordinateTaskAsync(captainId, taskId, dto);
@@ -221,9 +239,9 @@ namespace ToDoApp.Api.Controllers
         return Ok(result);
     }
 
-        [HttpDelete("subordinate/{taskId}")]
+        [HttpDelete("delete-subordinate/{taskId}")]
         [Authorize(Roles = "Captain")]
-        public async Task<IActionResult> DeleteSubordinateTask(Guid taskId)
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> DeleteSubordinateTask(Guid taskId)
         {
             var captainId = GetUserIdFromToken();
             var success = await _taskService.DeleteSubordinateTaskAsync(captainId, taskId);
@@ -231,10 +249,10 @@ namespace ToDoApp.Api.Controllers
             return NoContent();
         }
 
-        
+
         [HttpGet("my-tasks")]
         [Authorize(Roles = "User,Captain")]
-        public async Task<IActionResult> GetMyAssignments()
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetMyAssignments()
         {
             var userId = GetUserIdFromToken();
             var tasks = await _taskService.GetMyAssignmentsAsync(userId);

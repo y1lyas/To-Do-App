@@ -12,8 +12,8 @@ using ToDoApp.Infrastructure;
 namespace ToDoApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250929130038_AddManagerSubordinateHierarchy")]
-    partial class AddManagerSubordinateHierarchy
+    [Migration("20251001141601_AssignmentVersion")]
+    partial class AssignmentVersion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,6 +96,30 @@ namespace ToDoApp.Migrations
                     b.ToTable("UserRoles");
                 });
 
+            modelBuilder.Entity("ToDoApp.Models.TaskAssignment", b =>
+                {
+                    b.Property<Guid>("TaskId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AssignedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("TaskId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TaskAssignments");
+                });
+
             modelBuilder.Entity("ToDoApp.Models.TaskCategory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -125,6 +149,9 @@ namespace ToDoApp.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("NOW()");
 
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
@@ -143,14 +170,11 @@ namespace ToDoApp.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("CreatedById");
 
                     b.ToTable("Tasks");
                 });
@@ -183,6 +207,25 @@ namespace ToDoApp.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ToDoApp.Models.TaskAssignment", b =>
+                {
+                    b.HasOne("ToDoApp.Models.TaskItem", "Task")
+                        .WithMany("Assignments")
+                        .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ToDoApp.Models.Auth.User", "User")
+                        .WithMany("TaskAssignments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Task");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ToDoApp.Models.TaskItem", b =>
                 {
                     b.HasOne("ToDoApp.Models.TaskCategory", "Category")
@@ -190,15 +233,15 @@ namespace ToDoApp.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("ToDoApp.Models.Auth.User", "User")
-                        .WithMany("Tasks")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("ToDoApp.Models.Auth.User", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
 
-                    b.Navigation("User");
+                    b.Navigation("CreatedBy");
                 });
 
             modelBuilder.Entity("ToDoApp.Models.Auth.Role", b =>
@@ -210,7 +253,7 @@ namespace ToDoApp.Migrations
                 {
                     b.Navigation("Subordinates");
 
-                    b.Navigation("Tasks");
+                    b.Navigation("TaskAssignments");
 
                     b.Navigation("UserRoles");
                 });
@@ -218,6 +261,11 @@ namespace ToDoApp.Migrations
             modelBuilder.Entity("ToDoApp.Models.TaskCategory", b =>
                 {
                     b.Navigation("Tasks");
+                });
+
+            modelBuilder.Entity("ToDoApp.Models.TaskItem", b =>
+                {
+                    b.Navigation("Assignments");
                 });
 #pragma warning restore 612, 618
         }

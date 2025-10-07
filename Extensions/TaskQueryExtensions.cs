@@ -11,7 +11,7 @@ namespace ToDoApp.Extensions
              requesterRole.Equals("Captain", StringComparison.OrdinalIgnoreCase))
             && userId.HasValue)
             {
-                query = query.Where(t => t.UserId == userId.Value);
+                query = query.Where(t => t.Assignments.Any(a => a.UserId == userId.Value));
             }
             if (!string.IsNullOrWhiteSpace(searchTitle))
                 query = query.Where(t => t.Title.Contains(searchTitle));

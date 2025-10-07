@@ -71,7 +71,10 @@ using (var scope = app.Services.CreateScope())
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.MapScalarApiReference();
+    app.MapScalarApiReference(options =>
+    {
+        options.Theme = ScalarTheme.DeepSpace; 
+    });
 }
 
 app.UseHttpsRedirection();

@@ -101,6 +101,9 @@ namespace ToDoApp.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("AssignedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<DateTime?>("CompletedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -160,20 +163,18 @@ namespace ToDoApp.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValue(2);
 
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("CreatedById");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Tasks");
                 });
@@ -235,20 +236,12 @@ namespace ToDoApp.Migrations
                     b.HasOne("ToDoApp.Models.Auth.User", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ToDoApp.Models.Auth.User", "User")
-                        .WithMany("Tasks")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
 
                     b.Navigation("CreatedBy");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ToDoApp.Models.Auth.Role", b =>
@@ -261,8 +254,6 @@ namespace ToDoApp.Migrations
                     b.Navigation("Subordinates");
 
                     b.Navigation("TaskAssignments");
-
-                    b.Navigation("Tasks");
 
                     b.Navigation("UserRoles");
                 });

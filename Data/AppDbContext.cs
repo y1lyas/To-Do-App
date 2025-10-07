@@ -39,13 +39,10 @@ namespace ToDoApp.Infrastructure
                 .HasForeignKey(ur => ur.RoleId);
 
             modelBuilder.Entity<TaskItem>()
-                  .HasOne(t => t.User)
-                  .WithMany(u => u.Tasks)
-                  .HasForeignKey(t => t.UserId);
-
-            modelBuilder.Entity<TaskItem>()
                   .Property(t => t.CreatedAt)
                   .HasDefaultValueSql("NOW()");
+
+
             modelBuilder.Entity<TaskItem>()
                   .Property(t => t.Priority)
                   .HasDefaultValue(TaskPriority.Medium);
@@ -68,6 +65,14 @@ namespace ToDoApp.Infrastructure
                 .HasOne(ta => ta.User)
                 .WithMany(u => u.TaskAssignments)
                 .HasForeignKey(ta => ta.UserId);
+
+            modelBuilder.Entity<TaskItem>()
+    
+                .HasOne(t => t.CreatedBy)
+                .WithMany() 
+                .HasForeignKey(t => t.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict); 
+
 
         }
 

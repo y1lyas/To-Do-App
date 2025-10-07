@@ -15,6 +15,8 @@ namespace ToDoApp.Models
 
         public bool IsCompleted { get; set; } = false;
         public DateTime? CompletedAt { get; set; }
-    }       
+
+        public DateTime AssignedAt { get; set; } = DateTime.UtcNow;
+    }
 }
 

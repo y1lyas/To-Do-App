@@ -22,7 +22,6 @@ namespace ToDoApp.Models.Auth
         [JsonIgnore]
         public ICollection<UserRole> UserRoles { get; set; }
         [JsonIgnore]
-        public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
         public Guid? ManagerId { get; set; }
         [JsonIgnore]
         public User? Manager { get; set; }

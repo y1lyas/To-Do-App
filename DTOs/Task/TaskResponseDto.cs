@@ -12,10 +12,12 @@ namespace ToDoApp.DTOs.Task
         public bool IsCompleted { get; set; }
         public DateTime CreatedAt { get; set; }
         public TaskPriority Priority { get; set; }
-        public Guid UserId { get; set; }
-        public string Username { get; set; }
         public Guid? CategoryId { get; set; }
         public string? CategoryName { get; set; }
+        public Guid CreatedById { get; set; }
+        public string CreatedByName { get; set; }
+        public List<AssignedUserDto> AssignedUsers { get; set; } = new();
+
 
 
     }
