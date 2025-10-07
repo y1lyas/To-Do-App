@@ -26,7 +26,7 @@ namespace ToDoApp.Api.Controllers
         public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetTask(
             [FromQuery] string? searchTitle,
             [FromQuery] Guid? categoryId,
-            [FromQuery] bool? isCompleted,
+            [FromQuery] TaskAssignmentStatus? status,
             [FromQuery] string? sortBy,
             [FromQuery] bool ascending = true,
             [FromQuery] int page = 1,
@@ -42,7 +42,7 @@ namespace ToDoApp.Api.Controllers
                 requesterId: userId,
                 categoryId,
                 searchTitle,
-                isCompleted,
+                status,
                 sortBy,
                 ascending,
                 page,
@@ -117,17 +117,17 @@ namespace ToDoApp.Api.Controllers
             return Ok(task);
         }
         [Authorize]
-        [HttpDelete("archive-completed")]
-        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> ArchiveCompletedTasks()
+        [HttpPut("assignments/{taskId}/status")]
+        public async Task<IActionResult> UpdateAssignmentStatus(Guid taskId, [FromBody] UpdateAssignmentStatusDto dto)
         {
             var userId = GetUserIdFromToken();
 
-            var archivedCount = await _taskService.ArchiveCompletedTasksAsync(userId);
+            var task = await _taskService.UpdateAssignmentStatusAsync(userId, taskId, dto.Status);
+            if (task == null) 
+                return NotFound();
 
-            if (archivedCount == 0)
-                return NotFound(new { message = "No completed tasks available for archiving." });
 
-            return Ok(new { message = $"{archivedCount} completed task(s) archived successfully." });
+            return Ok(task);
         }
 
         [HttpGet("Captain-Only")]
@@ -135,8 +135,8 @@ namespace ToDoApp.Api.Controllers
         public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetSubordinatesTasks(
             [FromQuery] Guid? userId,
             [FromQuery] Guid? categoryId,
+            [FromQuery] TaskAssignmentStatus? status,
             [FromQuery] string? searchTitle,
-            [FromQuery] bool? isCompleted,
             [FromQuery] string? sortBy,
             [FromQuery] bool ascending = true,
             [FromQuery] int page = 1,
@@ -151,7 +151,7 @@ namespace ToDoApp.Api.Controllers
                 userId,
                 categoryId,
                 searchTitle,
-                isCompleted,
+                status,
                 sortBy,
                 ascending,
                 page,
@@ -169,7 +169,7 @@ namespace ToDoApp.Api.Controllers
           [FromQuery] Guid? userId = null,
           [FromQuery] string? searchTitle = null,
           [FromQuery] Guid? categoryId = null,
-          [FromQuery] bool? isCompleted = null,
+          [FromQuery] TaskAssignmentStatus? status = null,
           [FromQuery] string? sortBy = null,
           [FromQuery] bool ascending = true,
           [FromQuery] int page = 1,
@@ -181,7 +181,7 @@ namespace ToDoApp.Api.Controllers
                  userId,
                  categoryId,
                  searchTitle,
-                 isCompleted,
+                 status,
                  sortBy,
                  ascending,
                  page,
@@ -257,6 +257,19 @@ namespace ToDoApp.Api.Controllers
             var userId = GetUserIdFromToken();
             var tasks = await _taskService.GetMyAssignmentsAsync(userId);
             return Ok(tasks);
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("archive-completed")]
+        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> ArchiveCompletedTasks()
+        {
+            var userId = GetUserIdFromToken();
+
+            var archivedCount = await _taskService.ArchiveCompletedTasksAsync(userId);
+
+            if (archivedCount == 0)
+                return NotFound(new { message = "No completed tasks available for archiving." });
+
+            return Ok(new { message = $"{archivedCount} completed task(s) archived successfully." });
         }
     }
 }

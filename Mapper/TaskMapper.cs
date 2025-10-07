@@ -17,7 +17,6 @@ namespace ToDoApp.Mapper
                 CreatedAt = task.CreatedAt,
                 DueDate = task.DueDate,
                 Priority = task.Priority,
-                IsCompleted = task.IsCompleted,
                 CreatedById = task.CreatedById,
                 CreatedByName = task.CreatedBy?.Username,
                 CategoryId = task.CategoryId,
@@ -26,6 +25,7 @@ namespace ToDoApp.Mapper
                  {
                      UserId = a.UserId,
                      Username = a.User?.Username ?? "Unknown",
+                     Status = a.Status,
                      AssignedAt = a.AssignedAt
                  }).ToList() ?? new List<AssignedUserDto>(),
             };
