@@ -18,7 +18,7 @@ namespace ToDoApp.Mapper
                 DueDate = task.DueDate,
                 Priority = task.Priority,
                 CreatedById = task.CreatedById,
-                CreatedByName = task.CreatedBy?.Username,
+                CreatedByName = task.CreatedBy.Username,
                 Status = task.Status,
                 CategoryId = task.CategoryId,
                 CategoryName = task.Category?.Name,
