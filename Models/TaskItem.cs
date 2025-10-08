@@ -19,7 +19,7 @@ namespace ToDoApp.Models
         [JsonIgnore]
         public User CreatedBy { get; set; } = null!;
 
-        public TaskStatus Status { get; set; } = TaskStatus.Active;
+        public TaskStatus Status { get; set; } = TaskStatus.Pending;
 
         [JsonIgnore]    
         public ICollection<TaskAssignment> Assignments { get; set; } = new List<TaskAssignment>();

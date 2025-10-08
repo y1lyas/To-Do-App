@@ -8,6 +8,7 @@ using ToDoApp.Models;
 using ToDoApp.Models.Auth;
 using ToDoApp.Services;
 using ToDoApp.Services.Auth;
+using ToDoApp.Services.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,7 @@ builder.Services.AddOpenApi("v1");
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITaskAuthService, TaskAuthService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 

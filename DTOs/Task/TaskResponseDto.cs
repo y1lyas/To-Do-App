@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using ToDoApp.Models;
+using TaskStatus = ToDoApp.Models.TaskStatus;
 
 namespace ToDoApp.DTOs.Task
 {
@@ -15,6 +16,7 @@ namespace ToDoApp.DTOs.Task
         public string? CategoryName { get; set; }
         public Guid CreatedById { get; set; }
         public string CreatedByName { get; set; }
+        public TaskStatus Status { get; set; }
         public List<AssignedUserDto> AssignedUsers { get; set; } = new();
 
 

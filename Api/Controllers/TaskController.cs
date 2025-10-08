@@ -6,6 +6,7 @@ using System.Security.Claims;
 using ToDoApp.DTOs.Task;
 using ToDoApp.Models;
 using ToDoApp.Services;
+using ToDoApp.Services.Auth;
 
 
 namespace ToDoApp.Api.Controllers
@@ -15,10 +16,12 @@ namespace ToDoApp.Api.Controllers
     public class TaskController : BaseController
     {
         private readonly ITaskService _taskService;
+        private readonly ITaskAuthService _taskAuthService;
 
-        public TaskController(ITaskService taskService)
+        public TaskController(ITaskService taskService, ITaskAuthService taskAuthService)
         {
             _taskService = taskService;
+            _taskAuthService = taskAuthService;
         }
 
         [Authorize]
@@ -100,18 +103,29 @@ namespace ToDoApp.Api.Controllers
 
             return NoContent();
         }
-        [Authorize]
+        [Authorize(Roles = "Captain")]
         [HttpPost("{taskId}/assign/{userId}")]
         public async Task<ActionResult<TaskResponseDto>> AssignUserToTask(Guid taskId, Guid userId)
         {
+            var currentUserId = GetUserIdFromToken();
+
+            if (!await _taskAuthService.CanModifyTaskAsync(taskId, currentUserId))
+                return Unauthorized("You are not allowed to modify this task.");
+
+
             var task = await _taskService.AssignUserToTaskAsync(taskId, userId);
             if (task == null) return NotFound();
             return Ok(task);
         }
-        [Authorize]
+        [Authorize(Roles = "Captain")]
         [HttpDelete("{taskId}/assign/{userId}")]
         public async Task<ActionResult<TaskResponseDto>> RemoveUserFromTask(Guid taskId, Guid userId)
         {
+            var currentUserId = GetUserIdFromToken();
+
+            if (!await _taskAuthService.CanModifyTaskAsync(taskId, currentUserId))
+                return Unauthorized("You are not allowed to modify this task.");
+
             var task = await _taskService.RemoveUserFromTaskAsync(taskId, userId);
             if (task == null) return NotFound();
             return Ok(task);
@@ -238,27 +252,7 @@ namespace ToDoApp.Api.Controllers
         if (result == null) return NotFound();
         return Ok(result);
     }
-
-        [HttpDelete("delete-subordinate/{taskId}")]
         [Authorize(Roles = "Captain")]
-        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> DeleteSubordinateTask(Guid taskId)
-        {
-            var captainId = GetUserIdFromToken();
-            var success = await _taskService.DeleteSubordinateTaskAsync(captainId, taskId);
-            if (!success) return NotFound();
-            return NoContent();
-        }
-
-
-        [HttpGet("my-tasks")]
-        [Authorize(Roles = "User,Captain")]
-        public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetMyAssignments()
-        {
-            var userId = GetUserIdFromToken();
-            var tasks = await _taskService.GetMyAssignmentsAsync(userId);
-            return Ok(tasks);
-        }
-        [Authorize(Roles = "Admin")]
         [HttpDelete("archive-completed")]
         public async Task<ActionResult<IEnumerable<TaskResponseDto>>> ArchiveCompletedTasks()
         {

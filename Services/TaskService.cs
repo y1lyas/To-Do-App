@@ -23,7 +23,13 @@ namespace ToDoApp.Services
 
         private void SyncTaskStatus(TaskItem task)
         {
-            if (task.Assignments.All(a => a.Status == TaskAssignmentStatus.Completed))
+            if (task.Assignments == null || !task.Assignments.Any())
+            {
+                task.Status = TaskStatus.Pending; 
+                return;
+            }
+
+                if (task.Assignments.All(a => a.Status == TaskAssignmentStatus.Completed))
                 task.Status = TaskStatus.Completed;
             else if (task.Assignments.Any(a => a.Status == TaskAssignmentStatus.InProgress))
                 task.Status = TaskStatus.Active;
@@ -225,9 +231,8 @@ namespace ToDoApp.Services
                 }
             }
 
-            SyncTaskStatus(task); 
-
             _context.Tasks.Add(task);
+            SyncTaskStatus(task);
             await _context.SaveChangesAsync();
 
             await _context.Entry(task)
@@ -263,34 +268,6 @@ namespace ToDoApp.Services
             return TaskMapper.MapToDto(task);
         }
 
-        public async Task<bool> DeleteSubordinateTaskAsync(Guid captainId, Guid taskId)
-        {
-            var task = await _context.Tasks
-                .Include(t => t.Assignments)
-                .ThenInclude(a => a.User)
-                .FirstOrDefaultAsync(t => t.Id == taskId &&
-                    t.Assignments.Any(a => a.User.ManagerId == captainId));
-
-            if (task == null) return false;
-
-            _context.Tasks.Remove(task);
-            await _context.SaveChangesAsync();
-            return true;
-        }
-
-        public async Task<IEnumerable<TaskResponseDto>> GetMyAssignmentsAsync(Guid userId)
-        {
-            var tasks = await _context.TaskAssignments
-                .Where(a => a.UserId == userId)
-                .Include(a => a.Task)
-                    .ThenInclude(t => t.Category)
-                .Include(a => a.Task)
-                    .ThenInclude(t => t.CreatedBy)
-                .Select(a => a.Task)
-                .ToListAsync();
-
-            return tasks.Select(TaskMapper.MapToDto);
-        }
         public async Task<TaskResponseDto?> AssignUserToTaskAsync(Guid taskId, Guid userId)
         {
             var task = await _context.Tasks

@@ -16,8 +16,6 @@ namespace ToDoApp.Services
         Task<IEnumerable<TaskResponseDto>> GetSubordinatesTasksAsync(Guid captainId, Guid? userId = null, Guid? categoryId = null, string? searchTitle = null, TaskAssignmentStatus? status = null, string? sortBy = null, bool ascending = true, int page = 1, int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null);
         Task<TaskResponseDto?> CreateTaskForSubordinatesAsync(Guid captainId, TaskCreateDto dto, List<Guid>? subordinateIds = null);
         Task<TaskResponseDto?> UpdateSubordinateTaskAsync(Guid captainId, Guid taskId, TaskUpdateDto dto);
-        Task<bool> DeleteSubordinateTaskAsync(Guid captainId, Guid taskId);
-        Task<IEnumerable<TaskResponseDto>> GetMyAssignmentsAsync(Guid userId);
         Task<TaskResponseDto?> RemoveUserFromTaskAsync(Guid taskId, Guid userId);
         Task<TaskResponseDto?> AssignUserToTaskAsync(Guid taskId, Guid userId);
         Task<TaskResponseDto?> UpdateAssignmentStatusAsync(Guid userId, Guid taskId, TaskAssignmentStatus newStatus);

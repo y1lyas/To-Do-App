@@ -2,10 +2,10 @@
 {
         public enum TaskStatus
         {
-            Pending,
-            Active,      
-            Completed,   
-            Archived,    
-            Deleted    
+            Pending =0,
+            Active =1,  
+            Completed=2,   
+            Archived=3, 
+            Deleted=4,
         }
 }

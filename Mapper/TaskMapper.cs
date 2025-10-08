@@ -19,6 +19,7 @@ namespace ToDoApp.Mapper
                 Priority = task.Priority,
                 CreatedById = task.CreatedById,
                 CreatedByName = task.CreatedBy?.Username,
+                Status = task.Status,
                 CategoryId = task.CategoryId,
                 CategoryName = task.Category?.Name,
                  AssignedUsers = task.Assignments?.Select(a => new AssignedUserDto
