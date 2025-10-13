@@ -15,6 +15,7 @@ namespace ToDoApp.Api.Controllers
             _categoryService = categoryService;
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto dto)
         {
             var category = await _categoryService.CreateCategoryAsync(dto);
@@ -22,6 +23,7 @@ namespace ToDoApp.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllCategories()
         {
             var categories = await _categoryService.GetAllCategoriesAsync();

@@ -2,11 +2,12 @@
 {
     public enum TaskPermission
     {
-        View,
         Update,
         Delete,
         Assign,
         Unassign,
+        UpdateStatus,
         Complete
+        
     }
 }

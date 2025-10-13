@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using ToDoApp.DTOs.Task;
 using ToDoApp.Models;
 using ToDoApp.Services;
@@ -56,6 +57,7 @@ namespace ToDoApp.Api.Controllers
 
             return Ok(tasks);
         }
+
         [Authorize]
         [HttpGet("assignments")]
         public async Task<ActionResult<IEnumerable<TaskResponseDto>>> GetMyAssignments(
@@ -95,14 +97,14 @@ namespace ToDoApp.Api.Controllers
             var currentUser = GetCurrentUser();
             if (currentUser == null) return Unauthorized();
 
-            bool authorized = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Update);
-            if (!authorized)
-                throw new UnauthorizedAccessException("You are not allowed to update this task.");
+            bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Update);
+            if (!hasPermission)
+                return Forbid();
 
-            var updated = await _taskService.UpdateAsync(currentUser, taskId, dto);
-            if (updated == null) return NotFound();
+            var result = await _taskService.UpdateAsync(currentUser, taskId, dto);
+            if (result == null) return NotFound();
 
-            return Ok(updated);
+            return Ok(result);
         }
 
         [Authorize]
@@ -111,37 +113,38 @@ namespace ToDoApp.Api.Controllers
         {
             var currentUser = GetCurrentUser();
             if (currentUser == null) return Unauthorized();
-            bool authorized = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Delete);
-            if (!authorized)
-                throw new UnauthorizedAccessException("You are not allowed to delete this task.");
-            var deleted = await _taskService.DeleteAsync(currentUser, taskId);
-            if (!deleted) return NotFound();
+            bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Delete);
+            if (!hasPermission)
+                return Forbid();
+
+            var result = await _taskService.DeleteAsync(currentUser, taskId);
+            if (!result) return NotFound();
 
             return NoContent();
         }
-        [Authorize(Roles = "Captain")]
+        [Authorize(Roles = "Captain,Admin")]
         [HttpPost("{taskId}/assign/{userId}")]
         public async Task<ActionResult<TaskResponseDto>> AssignUserToTask(Guid taskId, Guid userId)
         {
             var currentUser = GetCurrentUser();   
 
-                 bool authorized = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Assign);
-            if (!authorized)
-                throw new UnauthorizedAccessException("You are not allowed to assign users to this task.");
+                 bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Assign);
+            if (!hasPermission)
+                return Forbid();
 
             var task = await _taskService.AssignUserToTaskAsync(taskId, userId);
             if (task == null) return NotFound();
-            return Ok(task);
+            return Ok(task);    
         }
-        [Authorize(Roles = "Captain")]
+        [Authorize(Roles = "Captain,Admin")]
         [HttpDelete("{taskId}/assign/{userId}")]
         public async Task<ActionResult<TaskResponseDto>> RemoveUserFromTask(Guid taskId, Guid userId)
         {
             var currentUser = GetCurrentUser();
 
-            bool authorized = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Unassign);
-            if (!authorized)
-                throw new UnauthorizedAccessException("You are not allowed to unassign users from this task.");
+            bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Unassign);
+            if (!hasPermission)
+                return Forbid();
 
             var task = await _taskService.RemoveUserFromTaskAsync(taskId, userId);
             if (task == null) return NotFound();
@@ -152,9 +155,9 @@ namespace ToDoApp.Api.Controllers
         public async Task<IActionResult> UpdateAssignmentStatus(Guid taskId, [FromBody] UpdateAssignmentStatusDto dto)
         {
             var currentUser = GetCurrentUser();
-            bool authorized = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Update);
-            if (!authorized)
-                throw new UnauthorizedAccessException("You are not allowed to update status for this task.");
+            bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.UpdateStatus);
+            if (!hasPermission)
+                return Forbid();
             var task = await _taskService.UpdateAssignmentStatusAsync(currentUser, taskId, dto.Status);
             if (task == null) 
                 return NotFound();
@@ -234,16 +237,6 @@ namespace ToDoApp.Api.Controllers
         return Ok(result);
     } 
 
-
-    [HttpPut("update-subordinate/{taskId}")]
-    [Authorize(Roles = "Captain")]
-    public async Task<ActionResult<IEnumerable<TaskResponseDto>>> UpdateSubordinateTask(Guid taskId, [FromBody] TaskUpdateDto dto)
-    {
-        var captainId = GetUserIdFromToken();
-        var result = await _taskService.UpdateSubordinateTaskAsync(captainId, taskId, dto);
-        if (result == null) return NotFound();
-        return Ok(result);
-    }
         [Authorize]
         [HttpDelete("archive-completed")]
         public async Task<ActionResult<IEnumerable<TaskResponseDto>>> ArchiveCompletedTasks()
