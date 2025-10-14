@@ -40,8 +40,6 @@ namespace ToDoApp.Api.Controllers
             [FromQuery] DateTime? dueDateTo = null)
         {
             var userId = GetUserIdFromToken();
-            if (userId == null) return Unauthorized();
-
 
             var tasks = await _taskService.GetByUserAsync(
                 requesterId: userId,
@@ -85,7 +83,6 @@ namespace ToDoApp.Api.Controllers
 
             var currentUser = GetCurrentUser();
 
-            if (currentUser == null) return Unauthorized();
             var task = await _taskService.CreateAsync(currentUser, dto);
             return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
         }
@@ -95,14 +92,12 @@ namespace ToDoApp.Api.Controllers
         public async Task<ActionResult<IEnumerable<TaskResponseDto>>> UpdateTask(Guid taskId,TaskUpdateDto dto)
         {
             var currentUser = GetCurrentUser();
-            if (currentUser == null) return Unauthorized();
 
             bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Update);
             if (!hasPermission)
-                return Forbid();
+                throw new UnauthorizedAccessException("No permission.");
 
             var result = await _taskService.UpdateAsync(currentUser, taskId, dto);
-            if (result == null) return NotFound();
 
             return Ok(result);
         }
@@ -112,13 +107,12 @@ namespace ToDoApp.Api.Controllers
         public async Task<ActionResult<IEnumerable<TaskResponseDto>>> DeleteTask(Guid taskId)
         {
             var currentUser = GetCurrentUser();
-            if (currentUser == null) return Unauthorized();
+
             bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Delete);
             if (!hasPermission)
-                return Forbid();
+                throw new UnauthorizedAccessException("No permission.");
 
             var result = await _taskService.DeleteAsync(currentUser, taskId);
-            if (!result) return NotFound();
 
             return NoContent();
         }
@@ -130,10 +124,10 @@ namespace ToDoApp.Api.Controllers
 
                  bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Assign);
             if (!hasPermission)
-                return Forbid();
+                throw new UnauthorizedAccessException("No permission.");
 
             var task = await _taskService.AssignUserToTaskAsync(taskId, userId);
-            if (task == null) return NotFound();
+
             return Ok(task);    
         }
         [Authorize(Roles = "Captain,Admin")]
@@ -144,10 +138,10 @@ namespace ToDoApp.Api.Controllers
 
             bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.Unassign);
             if (!hasPermission)
-                return Forbid();
+                throw new UnauthorizedAccessException("No permission.");
 
             var task = await _taskService.RemoveUserFromTaskAsync(taskId, userId);
-            if (task == null) return NotFound();
+
             return Ok(task);
         }
         [Authorize]
@@ -157,12 +151,8 @@ namespace ToDoApp.Api.Controllers
             var currentUser = GetCurrentUser();
             bool hasPermission = await _authorizationService.AuthorizeTaskAccessAsync(currentUser, taskId, TaskPermission.UpdateStatus);
             if (!hasPermission)
-                return Forbid();
+                throw new UnauthorizedAccessException("No permission.");
             var task = await _taskService.UpdateAssignmentStatusAsync(currentUser, taskId, dto.Status);
-            if (task == null) 
-                return NotFound();
-
-
             return Ok(task);
         }
 

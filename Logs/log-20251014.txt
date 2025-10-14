@@ -1,0 +1,1614 @@
+2025-10-14 14:57:30.475 +03:00 [WRN] The 'TaskPriority' property 'Priority' on entity type 'TaskItem' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'TaskPriority' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2025-10-14 14:57:30.882 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Roles" AS r)
+2025-10-14 14:57:31.025 +03:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-14 14:57:31.216 +03:00 [INF] Now listening on: https://localhost:7024
+2025-10-14 14:57:31.218 +03:00 [INF] Now listening on: http://localhost:5244
+2025-10-14 14:57:31.279 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-14 14:57:31.280 +03:00 [INF] Hosting environment: Development
+2025-10-14 14:57:31.282 +03:00 [INF] Content root path: C:\Users\user1\Desktop\Projeler-2\ToDoApp
+2025-10-14 14:57:31.402 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar - null null
+2025-10-14 14:57:31.559 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 14:57:31.569 +03:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-10-14 14:57:31.571 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 14:57:31.576 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar - 302 0 null 177.0522ms
+2025-10-14 14:57:31.582 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 14:57:31.587 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 14:57:31.657 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 14:57:31.666 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 14:57:31.670 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 88.3378ms
+2025-10-14 14:57:31.680 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 14:57:31.680 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 14:57:31.680 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 14:57:31.685 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 14:57:31.689 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 14:57:31.687 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 14:57:31.727 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 46.7188ms
+2025-10-14 14:57:31.729 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 14:57:31.729 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 14:57:31.736 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 14:57:31.737 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 14:57:31.738 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 57.3949ms
+2025-10-14 14:57:31.738 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 58.1756ms
+2025-10-14 14:57:31.752 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.202ms
+2025-10-14 14:57:31.808 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 14:57:31.812 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 14:57:31.953 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 14:57:31.954 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 14:57:31.956 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 148.8337ms
+2025-10-14 14:57:31.959 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 14:57:31.976 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 14:57:31.978 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 23.6063ms
+2025-10-14 14:57:41.859 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7024/api/Auth/login - application/json 47
+2025-10-14 14:57:41.866 +03:00 [INF] Executing endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 14:57:41.892 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ToDoApp.DTOs.Auth.TokenResponseDto]] Login(ToDoApp.DTOs.Auth.LoginDto) on controller AuthController (ToDoApp).
+2025-10-14 14:57:42.219 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__dto_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__dto_Username_0
+LIMIT 1
+2025-10-14 14:57:42.580 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Name"
+FROM "UserRoles" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."UserId" = @__user_Id_0
+2025-10-14 14:57:42.749 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2;
+2025-10-14 14:57:42.779 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[ToDoApp.DTOs.Auth.TokenResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:57:42.789 +03:00 [INF] Executed action AuthController.Login (ToDoApp) in 887.445ms
+2025-10-14 14:57:42.791 +03:00 [INF] Executed endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 14:57:42.795 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7024/api/Auth/login - 200 null application/json; charset=utf-8 936.3625ms
+2025-10-14 14:58:01.362 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/Admin-only - null null
+2025-10-14 14:58:01.418 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetAll (ToDoApp)'
+2025-10-14 14:58:01.437 +03:00 [INF] Route matched with {action = "GetAll", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetAll(System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:01.658 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:58:01.703 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:01.732 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetAll (ToDoApp) in 286.618ms
+2025-10-14 14:58:01.736 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetAll (ToDoApp)'
+2025-10-14 14:58:01.741 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/Admin-only - 200 null application/json; charset=utf-8 379.7817ms
+2025-10-14 14:58:10.511 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7024/api/Task/Captain-Only-assign - application/json 94
+2025-10-14 14:58:10.519 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Captain)
+2025-10-14 14:58:10.523 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-10-14 14:58:10.525 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7024/api/Task/Captain-Only-assign - 403 0 null 14.3771ms
+2025-10-14 14:58:23.801 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7024/api/Task/archive-completed - text/plain;charset=UTF-8 0
+2025-10-14 14:58:23.809 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.ArchiveCompletedTasks (ToDoApp)'
+2025-10-14 14:58:23.814 +03:00 [INF] Route matched with {action = "ArchiveCompletedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] ArchiveCompletedTasks() on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:23.849 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__currentUser_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title", t1."TaskId", t1."UserId", t1."AssignedAt", t1."CompletedAt", t1."Status"
+FROM "Tasks" AS t
+LEFT JOIN "TaskAssignments" AS t1 ON t."Id" = t1."TaskId"
+WHERE t."Status" = 2 AND (t."CreatedById" = @__currentUser_Id_0 OR EXISTS (
+    SELECT 1
+    FROM "TaskAssignments" AS t0
+    WHERE t."Id" = t0."TaskId" AND t0."UserId" = @__currentUser_Id_0))
+ORDER BY t."Id", t1."TaskId"
+2025-10-14 14:58:23.858 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-14 14:58:23.866 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.ArchiveCompletedTasks (ToDoApp) in 50.4735ms
+2025-10-14 14:58:23.871 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.ArchiveCompletedTasks (ToDoApp)'
+2025-10-14 14:58:23.874 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:7024/api/Task/archive-completed - 404 null application/json; charset=utf-8 73.4394ms
+2025-10-14 14:58:35.785 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 14:58:35.791 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:35.803 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:35.835 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:58:35.841 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:35.842 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 34.9684ms
+2025-10-14 14:58:35.843 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:35.845 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 59.6993ms
+2025-10-14 14:58:37.527 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 14:58:37.533 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:37.535 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:37.540 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:58:37.545 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:37.546 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 9.798ms
+2025-10-14 14:58:37.548 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:37.550 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 23.0654ms
+2025-10-14 14:58:38.110 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 14:58:38.119 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:38.121 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:38.126 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:58:38.132 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:38.135 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 11.4336ms
+2025-10-14 14:58:38.137 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:38.139 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 28.3788ms
+2025-10-14 14:58:38.599 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 14:58:38.604 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:38.606 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:38.611 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:58:38.614 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:38.616 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 7.5871ms
+2025-10-14 14:58:38.621 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:38.623 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 24.0523ms
+2025-10-14 14:58:39.126 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 14:58:39.133 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:39.135 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:39.139 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:58:39.143 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:39.144 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 6.7843ms
+2025-10-14 14:58:39.145 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:39.147 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 20.4311ms
+2025-10-14 14:58:39.639 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 14:58:39.644 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:39.646 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:39.651 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:58:39.655 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:39.656 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 7.8461ms
+2025-10-14 14:58:39.658 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:58:39.659 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 20.6951ms
+2025-10-14 14:58:46.829 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 14:58:46.835 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 14:58:46.839 +03:00 [INF] Route matched with {action = "GetMyAssignments", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetMyAssignments(System.Nullable`1[System.Guid], System.String, System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:58:46.869 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__currentUser_Id_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."CategoryId", s."CreatedAt", s."CreatedById", s."Description", s."DueDate", s."Priority", s."Status0", s."Title", s."TaskId", s."UserId", t1."Id", u."Id", s0."TaskId", s0."UserId", s0."AssignedAt", s0."CompletedAt", s0."Status", s0."Id", s0."CreatedAt", s0."Email", s0."ManagerId", s0."PasswordHash", s0."RefreshToken", s0."RefreshTokenExpiryTime", s0."Username", t1."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."TaskId", t."UserId", t0."Id", t0."CategoryId", t0."CreatedAt", t0."CreatedById", t0."Description", t0."DueDate", t0."Priority", t0."Status" AS "Status0", t0."Title"
+    FROM "TaskAssignments" AS t
+    INNER JOIN "Tasks" AS t0 ON t."TaskId" = t0."Id"
+    WHERE t."UserId" = @__currentUser_Id_0
+    ORDER BY t0."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS s
+LEFT JOIN "TaskCategories" AS t1 ON s."CategoryId" = t1."Id"
+INNER JOIN "Users" AS u ON s."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s0 ON s."Id" = s0."TaskId"
+ORDER BY s."CreatedAt", s."TaskId", s."UserId", s."Id", t1."Id", u."Id", s0."TaskId", s0."UserId"
+2025-10-14 14:58:46.881 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:58:46.884 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp) in 42.3287ms
+2025-10-14 14:58:46.887 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 14:58:46.888 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 200 null application/json; charset=utf-8 59.063ms
+2025-10-14 14:59:06.647 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 14:59:06.653 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 14:59:06.654 +03:00 [INF] Route matched with {action = "GetMyAssignments", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetMyAssignments(System.Nullable`1[System.Guid], System.String, System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:59:06.659 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__currentUser_Id_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."CategoryId", s."CreatedAt", s."CreatedById", s."Description", s."DueDate", s."Priority", s."Status0", s."Title", s."TaskId", s."UserId", t1."Id", u."Id", s0."TaskId", s0."UserId", s0."AssignedAt", s0."CompletedAt", s0."Status", s0."Id", s0."CreatedAt", s0."Email", s0."ManagerId", s0."PasswordHash", s0."RefreshToken", s0."RefreshTokenExpiryTime", s0."Username", t1."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."TaskId", t."UserId", t0."Id", t0."CategoryId", t0."CreatedAt", t0."CreatedById", t0."Description", t0."DueDate", t0."Priority", t0."Status" AS "Status0", t0."Title"
+    FROM "TaskAssignments" AS t
+    INNER JOIN "Tasks" AS t0 ON t."TaskId" = t0."Id"
+    WHERE t."UserId" = @__currentUser_Id_0
+    ORDER BY t0."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS s
+LEFT JOIN "TaskCategories" AS t1 ON s."CategoryId" = t1."Id"
+INNER JOIN "Users" AS u ON s."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s0 ON s."Id" = s0."TaskId"
+ORDER BY s."CreatedAt", s."TaskId", s."UserId", s."Id", t1."Id", u."Id", s0."TaskId", s0."UserId"
+2025-10-14 14:59:06.661 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:59:06.662 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp) in 6.2176ms
+2025-10-14 14:59:06.664 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 14:59:06.665 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 200 null application/json; charset=utf-8 17.7927ms
+2025-10-14 14:59:36.363 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 14:59:36.374 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:59:36.375 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 14:59:36.380 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 14:59:36.386 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 14:59:36.387 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 9.7697ms
+2025-10-14 14:59:36.389 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 14:59:36.390 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 27.1816ms
+2025-10-14 15:01:46.807 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:01:46.824 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:01:46.830 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:01:46.846 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0 AND t."Status" <> 3 AND t."Status" <> 4
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:01:46.855 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:01:46.860 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 22.4972ms
+2025-10-14 15:01:46.866 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:01:46.871 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 63.2692ms
+2025-10-14 15:01:55.909 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:01:55.924 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:01:55.932 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:01:55.936 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:01:55.939 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 30.1749ms
+2025-10-14 15:01:55.968 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:01:55.968 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:01:55.969 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:01:55.978 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:01:55.981 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:01:55.981 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:01:55.982 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:01:55.982 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:01:55.983 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:01:55.984 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 15.8933ms
+2025-10-14 15:01:55.989 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 20.2418ms
+2025-10-14 15:01:55.990 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 22.1333ms
+2025-10-14 15:01:55.995 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:01:56.017 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.2245ms
+2025-10-14 15:01:56.152 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:01:56.162 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:01:56.215 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:01:56.218 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 66.9452ms
+2025-10-14 15:01:56.218 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:01:56.232 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:01:56.249 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:01:56.251 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 33.0245ms
+2025-10-14 15:01:57.120 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/favicon.svg - null null
+2025-10-14 15:01:57.132 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:01:57.136 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:01:57.140 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:01:57.145 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/favicon.svg - 304 null null 24.5671ms
+2025-10-14 15:02:32.424 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:32.436 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:32.443 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:32.566 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:32.620 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:32.636 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 189.6579ms
+2025-10-14 15:02:32.642 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:32.645 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 221.0902ms
+2025-10-14 15:02:39.917 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7024/api/Task/task-byfbdd7ad7-22e5-4262-bd72-dd145370b37f - text/plain;charset=UTF-8 0
+2025-10-14 15:02:39.924 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:02:39.927 +03:00 [INF] Route matched with {action = "DeleteTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] DeleteTask(System.Guid) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:39.947 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__taskId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."TaskId", t0."UserId", t0."AssignedAt", t0."CompletedAt", t0."Status"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."Id" = @__taskId_0
+    LIMIT 1
+) AS t1
+LEFT JOIN "TaskAssignments" AS t0 ON t1."Id" = t0."TaskId"
+ORDER BY t1."Id", t0."TaskId"
+2025-10-14 15:02:39.983 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__taskId_0='?' (DbType = Guid), @__currentUser_Id_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+FROM "Tasks" AS t
+WHERE t."Id" = @__taskId_0 AND t."CreatedById" = @__currentUser_Id_1
+LIMIT 1
+2025-10-14 15:02:40.072 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Tasks"
+WHERE "Id" = @p0;
+2025-10-14 15:02:40.091 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-10-14 15:02:40.097 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp) in 168.5029ms
+2025-10-14 15:02:40.104 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:02:40.109 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:7024/api/Task/task-byfbdd7ad7-22e5-4262-bd72-dd145370b37f - 204 null null 191.3759ms
+2025-10-14 15:02:47.378 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:47.385 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:47.387 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:47.391 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:47.394 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:47.395 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 6.6101ms
+2025-10-14 15:02:47.398 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:47.400 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 21.1447ms
+2025-10-14 15:02:49.158 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:49.165 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:49.167 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:49.172 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:49.176 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:49.179 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 10.4397ms
+2025-10-14 15:02:49.181 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:49.182 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 23.5221ms
+2025-10-14 15:02:49.646 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:49.651 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:49.652 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:49.657 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:49.662 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:49.663 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 7.0682ms
+2025-10-14 15:02:49.664 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:49.665 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 19.0754ms
+2025-10-14 15:02:49.946 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:49.954 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:49.959 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:49.963 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:49.965 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:49.967 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 6.5055ms
+2025-10-14 15:02:49.970 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:49.972 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 25.658ms
+2025-10-14 15:02:50.222 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:50.230 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:50.232 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:50.237 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:50.240 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:50.242 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 6.6185ms
+2025-10-14 15:02:50.243 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:50.244 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 22.0401ms
+2025-10-14 15:02:50.507 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:50.513 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:50.514 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:50.520 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:50.523 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:50.525 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 7.9045ms
+2025-10-14 15:02:50.526 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:50.528 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 21.1799ms
+2025-10-14 15:02:50.798 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:50.802 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:50.805 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:50.809 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:50.811 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:50.812 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 4.4742ms
+2025-10-14 15:02:50.813 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:50.814 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 16.5512ms
+2025-10-14 15:02:51.128 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:51.133 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.135 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:51.140 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:51.142 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:51.143 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 5.1537ms
+2025-10-14 15:02:51.145 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.145 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 17.3629ms
+2025-10-14 15:02:51.413 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:51.417 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.418 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:51.423 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:51.428 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:51.429 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 8.4519ms
+2025-10-14 15:02:51.431 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.433 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 20.0361ms
+2025-10-14 15:02:51.696 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:51.702 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.704 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:51.709 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:51.711 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:51.712 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 4.9013ms
+2025-10-14 15:02:51.713 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.715 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 18.3823ms
+2025-10-14 15:02:51.956 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:51.962 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.963 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:51.969 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:51.972 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:51.974 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 7.8064ms
+2025-10-14 15:02:51.975 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:51.977 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 20.1762ms
+2025-10-14 15:02:52.256 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:02:52.261 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:52.264 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:02:52.269 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:02:52.272 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:02:52.273 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 6.357ms
+2025-10-14 15:02:52.275 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:02:52.276 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 19.9298ms
+2025-10-14 15:02:57.291 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:57.297 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:57.301 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:57.303 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 12.0613ms
+2025-10-14 15:02:57.598 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:57.602 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:57.604 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:57.606 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 8.3371ms
+2025-10-14 15:02:57.866 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:57.873 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:57.874 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:57.875 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 9.1021ms
+2025-10-14 15:02:58.150 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:58.155 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:58.157 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:58.158 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 8.454ms
+2025-10-14 15:02:58.410 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:58.417 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:58.419 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:58.421 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 11.2165ms
+2025-10-14 15:02:58.695 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:58.701 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:58.701 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:58.702 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 7.9479ms
+2025-10-14 15:02:58.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:58.982 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:58.983 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:58.983 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 7.103ms
+2025-10-14 15:02:59.252 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:02:59.257 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:02:59.259 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:02:59.260 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 401 0 null 8.0677ms
+2025-10-14 15:03:05.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:03:05.187 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:03:05.192 +03:00 [INF] Route matched with {action = "GetMyAssignments", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetMyAssignments(System.Nullable`1[System.Guid], System.String, System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:03:05.197 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__currentUser_Id_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."CategoryId", s."CreatedAt", s."CreatedById", s."Description", s."DueDate", s."Priority", s."Status0", s."Title", s."TaskId", s."UserId", t1."Id", u."Id", s0."TaskId", s0."UserId", s0."AssignedAt", s0."CompletedAt", s0."Status", s0."Id", s0."CreatedAt", s0."Email", s0."ManagerId", s0."PasswordHash", s0."RefreshToken", s0."RefreshTokenExpiryTime", s0."Username", t1."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."TaskId", t."UserId", t0."Id", t0."CategoryId", t0."CreatedAt", t0."CreatedById", t0."Description", t0."DueDate", t0."Priority", t0."Status" AS "Status0", t0."Title"
+    FROM "TaskAssignments" AS t
+    INNER JOIN "Tasks" AS t0 ON t."TaskId" = t0."Id"
+    WHERE t."UserId" = @__currentUser_Id_0
+    ORDER BY t0."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS s
+LEFT JOIN "TaskCategories" AS t1 ON s."CategoryId" = t1."Id"
+INNER JOIN "Users" AS u ON s."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s0 ON s."Id" = s0."TaskId"
+ORDER BY s."CreatedAt", s."TaskId", s."UserId", s."Id", t1."Id", u."Id", s0."TaskId", s0."UserId"
+2025-10-14 15:03:05.200 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:03:05.202 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp) in 6.9561ms
+2025-10-14 15:03:05.204 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:03:05.206 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 200 null application/json; charset=utf-8 26.1851ms
+2025-10-14 15:03:05.668 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:03:05.674 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:03:05.676 +03:00 [INF] Route matched with {action = "GetMyAssignments", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetMyAssignments(System.Nullable`1[System.Guid], System.String, System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:03:05.681 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__currentUser_Id_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."CategoryId", s."CreatedAt", s."CreatedById", s."Description", s."DueDate", s."Priority", s."Status0", s."Title", s."TaskId", s."UserId", t1."Id", u."Id", s0."TaskId", s0."UserId", s0."AssignedAt", s0."CompletedAt", s0."Status", s0."Id", s0."CreatedAt", s0."Email", s0."ManagerId", s0."PasswordHash", s0."RefreshToken", s0."RefreshTokenExpiryTime", s0."Username", t1."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."TaskId", t."UserId", t0."Id", t0."CategoryId", t0."CreatedAt", t0."CreatedById", t0."Description", t0."DueDate", t0."Priority", t0."Status" AS "Status0", t0."Title"
+    FROM "TaskAssignments" AS t
+    INNER JOIN "Tasks" AS t0 ON t."TaskId" = t0."Id"
+    WHERE t."UserId" = @__currentUser_Id_0
+    ORDER BY t0."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS s
+LEFT JOIN "TaskCategories" AS t1 ON s."CategoryId" = t1."Id"
+INNER JOIN "Users" AS u ON s."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s0 ON s."Id" = s0."TaskId"
+ORDER BY s."CreatedAt", s."TaskId", s."UserId", s."Id", t1."Id", u."Id", s0."TaskId", s0."UserId"
+2025-10-14 15:03:05.685 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:03:05.686 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp) in 6.9189ms
+2025-10-14 15:03:05.688 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:03:05.689 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 200 null application/json; charset=utf-8 21.5104ms
+2025-10-14 15:03:09.515 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:03:09.521 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:03:09.523 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:03:09.527 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:03:09.529 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:03:09.530 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 5.0099ms
+2025-10-14 15:03:09.531 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:03:09.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 18.1001ms
+2025-10-14 15:03:09.978 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:03:09.985 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:03:09.987 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:03:09.991 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:03:09.994 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:03:09.995 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 6.7243ms
+2025-10-14 15:03:09.997 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:03:09.998 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 19.4432ms
+2025-10-14 15:04:41.877 +03:00 [WRN] The 'TaskPriority' property 'Priority' on entity type 'TaskItem' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'TaskPriority' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2025-10-14 15:04:42.376 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Roles" AS r)
+2025-10-14 15:04:42.516 +03:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-14 15:04:42.684 +03:00 [INF] Now listening on: https://localhost:7024
+2025-10-14 15:04:42.693 +03:00 [INF] Now listening on: http://localhost:5244
+2025-10-14 15:04:42.747 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-14 15:04:42.750 +03:00 [INF] Hosting environment: Development
+2025-10-14 15:04:42.750 +03:00 [INF] Content root path: C:\Users\user1\Desktop\Projeler-2\ToDoApp
+2025-10-14 15:04:43.181 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar - null null
+2025-10-14 15:04:43.361 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:04:43.371 +03:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-10-14 15:04:43.372 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:04:43.378 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar - 302 0 null 199.7342ms
+2025-10-14 15:04:43.384 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:04:43.393 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:04:43.470 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:04:43.482 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:04:43.485 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 100.4104ms
+2025-10-14 15:04:43.506 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:04:43.506 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:04:43.506 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:04:43.541 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:04:43.546 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:04:43.550 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:04:43.596 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 89.5188ms
+2025-10-14 15:04:43.608 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:04:43.608 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:04:43.609 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:04:43.609 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:04:43.610 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 104.1722ms
+2025-10-14 15:04:43.611 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 105.3433ms
+2025-10-14 15:04:43.624 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 82.9728ms
+2025-10-14 15:04:43.686 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:04:43.690 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:04:43.854 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:04:43.857 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:04:43.858 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 171.4388ms
+2025-10-14 15:04:43.860 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:04:43.882 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:04:43.884 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 26.9858ms
+2025-10-14 15:04:52.630 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7024/api/Auth/login - application/json 47
+2025-10-14 15:04:52.636 +03:00 [INF] Executing endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:04:52.670 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ToDoApp.DTOs.Auth.TokenResponseDto]] Login(ToDoApp.DTOs.Auth.LoginDto) on controller AuthController (ToDoApp).
+2025-10-14 15:04:52.856 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__dto_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__dto_Username_0
+LIMIT 1
+2025-10-14 15:04:53.220 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Name"
+FROM "UserRoles" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."UserId" = @__user_Id_0
+2025-10-14 15:04:53.370 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2;
+2025-10-14 15:04:53.394 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[ToDoApp.DTOs.Auth.TokenResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:04:53.410 +03:00 [INF] Executed action AuthController.Login (ToDoApp) in 730.4759ms
+2025-10-14 15:04:53.413 +03:00 [INF] Executed endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:04:53.421 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7024/api/Auth/login - 200 null application/json; charset=utf-8 790.9246ms
+2025-10-14 15:05:15.187 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:05:15.250 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:05:15.271 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:05:15.457 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:05:15.461 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:05:15.465 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 182.3062ms
+2025-10-14 15:05:15.466 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:05:15.468 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 280.9314ms
+2025-10-14 15:05:21.191 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:05:21.200 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:05:21.202 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:05:21.208 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:05:21.211 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:05:21.212 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 8.6363ms
+2025-10-14 15:05:21.214 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:05:21.215 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 24.3006ms
+2025-10-14 15:06:18.338 +03:00 [WRN] The 'TaskPriority' property 'Priority' on entity type 'TaskItem' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'TaskPriority' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2025-10-14 15:06:18.742 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Roles" AS r)
+2025-10-14 15:06:18.890 +03:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-14 15:06:19.071 +03:00 [INF] Now listening on: https://localhost:7024
+2025-10-14 15:06:19.078 +03:00 [INF] Now listening on: http://localhost:5244
+2025-10-14 15:06:19.127 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-14 15:06:19.130 +03:00 [INF] Hosting environment: Development
+2025-10-14 15:06:19.132 +03:00 [INF] Content root path: C:\Users\user1\Desktop\Projeler-2\ToDoApp
+2025-10-14 15:06:19.411 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar - null null
+2025-10-14 15:06:19.554 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:06:19.563 +03:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-10-14 15:06:19.565 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:06:19.569 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar - 302 0 null 163.9109ms
+2025-10-14 15:06:19.574 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:06:19.583 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:06:19.666 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:06:19.673 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:06:19.675 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 101.1202ms
+2025-10-14 15:06:19.686 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:06:19.686 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:06:19.686 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:06:19.695 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:06:19.698 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:06:19.706 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:06:19.719 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 33.3045ms
+2025-10-14 15:06:19.719 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:06:19.719 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:06:19.725 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:06:19.725 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:06:19.727 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 41.0054ms
+2025-10-14 15:06:19.728 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 41.9413ms
+2025-10-14 15:06:19.743 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.6546ms
+2025-10-14 15:06:19.919 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:06:19.926 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:06:20.090 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:06:20.092 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:06:20.095 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 175.7452ms
+2025-10-14 15:06:20.096 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:06:20.116 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:06:20.118 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 26.3946ms
+2025-10-14 15:06:28.913 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7024/api/Auth/login - application/json 47
+2025-10-14 15:06:28.919 +03:00 [INF] Executing endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:06:28.945 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ToDoApp.DTOs.Auth.TokenResponseDto]] Login(ToDoApp.DTOs.Auth.LoginDto) on controller AuthController (ToDoApp).
+2025-10-14 15:06:29.183 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__dto_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__dto_Username_0
+LIMIT 1
+2025-10-14 15:06:29.555 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Name"
+FROM "UserRoles" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."UserId" = @__user_Id_0
+2025-10-14 15:06:29.685 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2;
+2025-10-14 15:06:29.708 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[ToDoApp.DTOs.Auth.TokenResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:06:29.723 +03:00 [INF] Executed action AuthController.Login (ToDoApp) in 773.4231ms
+2025-10-14 15:06:29.726 +03:00 [INF] Executed endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:06:29.732 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7024/api/Auth/login - 200 null application/json; charset=utf-8 819.5855ms
+2025-10-14 15:06:50.628 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7024/api/Task/task-bysad - text/plain;charset=UTF-8 0
+2025-10-14 15:06:50.776 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:06:50.791 +03:00 [INF] Route matched with {action = "DeleteTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] DeleteTask(System.Guid) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:06:50.813 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-10-14 15:06:50.853 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp) in 56.4161ms
+2025-10-14 15:06:50.859 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:06:50.863 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:7024/api/Task/task-bysad - 400 null application/problem+json; charset=utf-8 235.4646ms
+2025-10-14 15:06:58.239 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7024/api/Task/task-bydsadad - text/plain;charset=UTF-8 0
+2025-10-14 15:06:58.250 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:06:58.251 +03:00 [INF] Route matched with {action = "DeleteTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] DeleteTask(System.Guid) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:06:58.254 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-10-14 15:06:58.255 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp) in 2.0826ms
+2025-10-14 15:06:58.257 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:06:58.258 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:7024/api/Task/task-bydsadad - 400 null application/problem+json; charset=utf-8 18.9733ms
+2025-10-14 15:07:07.977 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7024/api/Task/task-bye5cb6a99-f69f-43f3-a886-7d91ef8c09e0 - text/plain;charset=UTF-8 0
+2025-10-14 15:07:07.983 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:07:07.986 +03:00 [INF] Route matched with {action = "DeleteTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] DeleteTask(System.Guid) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:07:08.168 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__taskId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."TaskId", t0."UserId", t0."AssignedAt", t0."CompletedAt", t0."Status"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."Id" = @__taskId_0
+    LIMIT 1
+) AS t1
+LEFT JOIN "TaskAssignments" AS t0 ON t1."Id" = t0."TaskId"
+ORDER BY t1."Id", t0."TaskId"
+2025-10-14 15:07:08.280 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__taskId_0='?' (DbType = Guid), @__currentUser_Id_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+FROM "Tasks" AS t
+WHERE t."Id" = @__taskId_0 AND t."CreatedById" = @__currentUser_Id_1
+LIMIT 1
+2025-10-14 15:09:02.556 +03:00 [WRN] The 'TaskPriority' property 'Priority' on entity type 'TaskItem' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'TaskPriority' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2025-10-14 15:09:02.948 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Roles" AS r)
+2025-10-14 15:09:03.096 +03:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-14 15:09:03.289 +03:00 [INF] Now listening on: https://localhost:7024
+2025-10-14 15:09:03.291 +03:00 [INF] Now listening on: http://localhost:5244
+2025-10-14 15:09:03.359 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-14 15:09:03.361 +03:00 [INF] Hosting environment: Development
+2025-10-14 15:09:03.363 +03:00 [INF] Content root path: C:\Users\user1\Desktop\Projeler-2\ToDoApp
+2025-10-14 15:09:03.487 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar - null null
+2025-10-14 15:09:03.640 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:09:03.648 +03:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-10-14 15:09:03.652 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:09:03.656 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar - 302 0 null 173.3007ms
+2025-10-14 15:09:03.662 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:09:03.670 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:09:03.741 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:09:03.749 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:09:03.751 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 89.6449ms
+2025-10-14 15:09:03.763 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:09:03.763 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:09:03.799 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:09:03.763 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:09:03.805 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:09:03.802 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:09:03.862 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:09:03.862 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:09:03.862 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 98.7515ms
+2025-10-14 15:09:03.863 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:09:03.864 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:09:03.867 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 104.0874ms
+2025-10-14 15:09:03.868 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 104.944ms
+2025-10-14 15:09:03.875 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 108.2489ms
+2025-10-14 15:09:03.935 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:09:03.938 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:09:04.077 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:09:04.081 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:09:04.083 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 147.6229ms
+2025-10-14 15:09:04.085 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:09:04.102 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:09:04.103 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 22.1557ms
+2025-10-14 15:09:13.885 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7024/api/Auth/login - application/json 47
+2025-10-14 15:09:13.890 +03:00 [INF] Executing endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:09:13.913 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ToDoApp.DTOs.Auth.TokenResponseDto]] Login(ToDoApp.DTOs.Auth.LoginDto) on controller AuthController (ToDoApp).
+2025-10-14 15:09:14.123 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__dto_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__dto_Username_0
+LIMIT 1
+2025-10-14 15:09:14.555 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Name"
+FROM "UserRoles" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."UserId" = @__user_Id_0
+2025-10-14 15:09:14.667 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2;
+2025-10-14 15:09:14.685 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[ToDoApp.DTOs.Auth.TokenResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:09:14.697 +03:00 [INF] Executed action AuthController.Login (ToDoApp) in 774.5807ms
+2025-10-14 15:09:14.700 +03:00 [INF] Executed endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:09:14.707 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7024/api/Auth/login - 200 null application/json; charset=utf-8 821.6469ms
+2025-10-14 15:09:30.890 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:09:30.970 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:09:30.995 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:09:31.257 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:09:31.271 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:09:31.279 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 273.05ms
+2025-10-14 15:09:31.285 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:09:31.288 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 398.9079ms
+2025-10-14 15:09:37.327 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:09:37.336 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:09:37.337 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:10:46.829 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:10:46.837 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:10:46.838 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 69498.6784ms
+2025-10-14 15:10:46.840 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:10:46.843 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 69515.865ms
+2025-10-14 15:10:47.756 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:10:47.763 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:10:47.777 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:10:47.778 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:10:47.783 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 27.1679ms
+2025-10-14 15:10:47.809 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:10:47.809 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:10:47.809 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:10:47.814 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:10:47.816 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:10:47.821 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:10:47.821 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:10:47.828 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:10:47.828 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 18.6063ms
+2025-10-14 15:10:47.854 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:10:47.855 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:10:47.856 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.4644ms
+2025-10-14 15:10:47.859 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 50.5037ms
+2025-10-14 15:10:47.861 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 51.6759ms
+2025-10-14 15:10:47.931 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:10:47.935 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:10:47.967 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:10:47.969 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 38.6672ms
+2025-10-14 15:10:47.970 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:10:47.977 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:10:48.007 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:10:48.009 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 38.517ms
+2025-10-14 15:10:48.016 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/favicon.svg - null null
+2025-10-14 15:10:48.019 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:10:48.020 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:10:48.022 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:10:48.023 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/favicon.svg - 304 null null 7.4579ms
+2025-10-14 15:12:15.065 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7024/api/Auth/login - application/json 47
+2025-10-14 15:12:15.074 +03:00 [INF] Executing endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:12:15.080 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ToDoApp.DTOs.Auth.TokenResponseDto]] Login(ToDoApp.DTOs.Auth.LoginDto) on controller AuthController (ToDoApp).
+2025-10-14 15:12:15.091 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__dto_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__dto_Username_0
+LIMIT 1
+2025-10-14 15:12:15.244 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Name"
+FROM "UserRoles" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."UserId" = @__user_Id_0
+2025-10-14 15:12:15.256 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2;
+2025-10-14 15:12:15.264 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[ToDoApp.DTOs.Auth.TokenResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:12:15.271 +03:00 [INF] Executed action AuthController.Login (ToDoApp) in 187.3685ms
+2025-10-14 15:12:15.275 +03:00 [INF] Executed endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:12:15.279 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7024/api/Auth/login - 200 null application/json; charset=utf-8 214.177ms
+2025-10-14 15:12:40.894 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:12:40.906 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:12:40.912 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:12:40.915 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 401 0 null 21.1964ms
+2025-10-14 15:12:44.849 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:12:44.856 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:12:44.867 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:12:44.875 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:12:44.878 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:12:44.881 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 10.5812ms
+2025-10-14 15:12:44.884 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:12:44.885 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 36.4572ms
+2025-10-14 15:17:00.482 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:17:00.491 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:17:00.494 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:17:00.549 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:17:00.552 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:17:00.555 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 58.0123ms
+2025-10-14 15:17:00.557 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:17:00.559 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 76.4471ms
+2025-10-14 15:17:22.353 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:17:22.369 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:17:22.372 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:17:22.374 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:17:22.376 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 23.4426ms
+2025-10-14 15:17:22.396 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:17:22.397 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:17:22.397 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:17:22.409 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 12.8416ms
+2025-10-14 15:17:22.406 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:17:22.414 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:17:22.417 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:17:22.419 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:17:22.421 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:17:22.422 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:17:22.423 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:17:22.424 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 28.0007ms
+2025-10-14 15:17:22.425 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 27.6146ms
+2025-10-14 15:17:22.436 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.3844ms
+2025-10-14 15:17:22.504 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:17:22.508 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:17:22.552 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/favicon.svg - null null
+2025-10-14 15:17:22.555 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:17:22.557 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:17:22.557 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:17:22.558 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 54.5991ms
+2025-10-14 15:17:22.560 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:17:22.562 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:17:22.566 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:17:22.568 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/favicon.svg - 304 null null 16.5083ms
+2025-10-14 15:17:22.585 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:17:22.587 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 29.5572ms
+2025-10-14 15:17:37.883 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:17:37.890 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:17:37.895 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:17:37.900 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:18:59.116 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ToDoApp.Models.TaskItem, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ToDoApp.DTOs.Task.TaskResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:18:59.219 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 81323.0182ms
+2025-10-14 15:18:59.222 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:18:59.224 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 200 null application/json; charset=utf-8 81340.8951ms
+2025-10-14 15:19:00.085 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:19:00.093 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:19:00.095 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:19:00.096 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:19:00.097 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 12.4431ms
+2025-10-14 15:19:00.120 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:19:00.124 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:19:00.124 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:19:00.124 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:19:00.125 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:19:00.126 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:19:00.128 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 4.0781ms
+2025-10-14 15:19:00.131 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:19:00.135 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:19:00.138 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.2792ms
+2025-10-14 15:19:00.139 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:19:00.140 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 19.8786ms
+2025-10-14 15:19:00.144 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:19:00.147 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 22.7279ms
+2025-10-14 15:19:00.213 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:19:00.216 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:19:00.224 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:19:00.226 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 13.2348ms
+2025-10-14 15:19:00.227 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:19:00.231 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:19:00.236 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:19:00.237 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 10.7237ms
+2025-10-14 15:19:00.498 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/favicon.svg - null null
+2025-10-14 15:19:00.502 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:19:00.503 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:19:00.504 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-10-14 15:19:00.506 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/favicon.svg - 304 null null 8.4489ms
+2025-10-14 15:19:07.447 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:19:07.453 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:19:07.459 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:19:07.464 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:32:14.196 +03:00 [WRN] The 'TaskPriority' property 'Priority' on entity type 'TaskItem' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'TaskPriority' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2025-10-14 15:32:14.603 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Roles" AS r)
+2025-10-14 15:32:14.745 +03:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-14 15:32:14.934 +03:00 [INF] Now listening on: https://localhost:7024
+2025-10-14 15:32:14.938 +03:00 [INF] Now listening on: http://localhost:5244
+2025-10-14 15:32:14.996 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-14 15:32:14.999 +03:00 [INF] Hosting environment: Development
+2025-10-14 15:32:15.000 +03:00 [INF] Content root path: C:\Users\user1\Desktop\Projeler-2\ToDoApp
+2025-10-14 15:32:15.149 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar - null null
+2025-10-14 15:32:15.339 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:32:15.349 +03:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-10-14 15:32:15.351 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:32:15.356 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar - 302 0 null 212.0786ms
+2025-10-14 15:32:15.361 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/ - null null
+2025-10-14 15:32:15.367 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:32:15.441 +03:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-10-14 15:32:15.449 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-10-14 15:32:15.451 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/ - 200 null text/html 90.4191ms
+2025-10-14 15:32:15.457 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-14 15:32:15.457 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.js - null null
+2025-10-14 15:32:15.457 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - null null
+2025-10-14 15:32:15.511 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/_vs/browserLink - null null
+2025-10-14 15:32:15.514 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:32:15.511 +03:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:32:15.545 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 88.2823ms
+2025-10-14 15:32:15.561 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:32:15.561 +03:00 [INF] Setting HTTP status code 304.
+2025-10-14 15:32:15.562 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-10-14 15:32:15.564 +03:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-10-14 15:32:15.564 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.js - 304 null null 107.5633ms
+2025-10-14 15:32:15.565 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/scalar/scalar.aspnetcore.js - 304 null null 108.2245ms
+2025-10-14 15:32:15.577 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.1105ms
+2025-10-14 15:32:15.634 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:32:15.638 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:32:15.787 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/openapi/v1.json - null null
+2025-10-14 15:32:15.787 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:32:15.794 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:32:15.796 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 161.9923ms
+2025-10-14 15:32:15.818 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-10-14 15:32:15.820 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/openapi/v1.json - 200 null application/json;charset=utf-8 33.3581ms
+2025-10-14 15:32:20.459 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:32:20.468 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:32:20.471 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:32:20.472 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 401 0 null 13.8598ms
+2025-10-14 15:32:21.160 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:32:21.167 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:32:21.169 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:32:21.172 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 401 0 null 12.1223ms
+2025-10-14 15:32:21.561 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:32:21.567 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-14 15:32:21.569 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-10-14 15:32:21.571 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 401 0 null 9.6285ms
+2025-10-14 15:32:29.485 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7024/api/Auth/login - application/json 47
+2025-10-14 15:32:29.492 +03:00 [INF] Executing endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:32:29.514 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ToDoApp.DTOs.Auth.TokenResponseDto]] Login(ToDoApp.DTOs.Auth.LoginDto) on controller AuthController (ToDoApp).
+2025-10-14 15:32:29.723 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__dto_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__dto_Username_0
+LIMIT 1
+2025-10-14 15:32:30.011 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Name"
+FROM "UserRoles" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."UserId" = @__user_Id_0
+2025-10-14 15:32:30.243 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2;
+2025-10-14 15:32:30.273 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[ToDoApp.DTOs.Auth.TokenResponseDto, ToDoApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-14 15:32:30.289 +03:00 [INF] Executed action AuthController.Login (ToDoApp) in 767.4643ms
+2025-10-14 15:32:30.291 +03:00 [INF] Executed endpoint 'AuthController.Login (ToDoApp)'
+2025-10-14 15:32:30.302 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7024/api/Auth/login - 200 null application/json; charset=utf-8 817.0014ms
+2025-10-14 15:32:48.808 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/by-user - null null
+2025-10-14 15:32:48.867 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:32:48.883 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetTask(System.String, System.Nullable`1[System.Guid], System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:32:49.137 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__requesterId_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."Id", u."Id", s."TaskId", s."UserId", s."AssignedAt", s."CompletedAt", s."Status", s."Id", s."CreatedAt", s."Email", s."ManagerId", s."PasswordHash", s."RefreshToken", s."RefreshTokenExpiryTime", s."Username", t0."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."CreatedById" = @__requesterId_0
+    ORDER BY t."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t1
+LEFT JOIN "TaskCategories" AS t0 ON t1."CategoryId" = t0."Id"
+INNER JOIN "Users" AS u ON t1."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s ON t1."Id" = s."TaskId"
+ORDER BY t1."CreatedAt", t1."Id", t0."Id", u."Id", s."TaskId", s."UserId"
+2025-10-14 15:33:20.357 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp) in 31463.4545ms
+2025-10-14 15:33:20.362 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetTask (ToDoApp)'
+2025-10-14 15:33:20.438 +03:00 [ERR] Unhandled exception occurred while processing /api/Task/by-user
+System.Collections.Generic.KeyNotFoundException: User has no tasks
+   at ToDoApp.Services.TaskService.GetByUserAsync(Guid requesterId, Nullable`1 categoryId, String searchTitle, Nullable`1 status, String sortBy, Boolean ascending, Int32 page, Int32 pageSize, Nullable`1 dueDateFrom, Nullable`1 dueDateTo) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Services\TaskService.cs:line 114
+   at ToDoApp.Api.Controllers.TaskController.GetTask(String searchTitle, Nullable`1 categoryId, Nullable`1 status, String sortBy, Boolean ascending, Int32 page, Int32 pageSize, Nullable`1 dueDateFrom, Nullable`1 dueDateTo) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Api\Controllers\TaskController.cs:line 44
+   at lambda_method150(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ToDoApp.Exceptions.GlobalExceptionHandler.InvokeAsync(HttpContext context) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Exceptions\GlobalExceptionHandler.cs:line 27
+2025-10-14 15:33:20.487 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/by-user - 404 null application/json; charset=utf-8 31679.1644ms
+2025-10-14 15:34:15.498 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:34:15.507 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:34:15.514 +03:00 [INF] Route matched with {action = "GetMyAssignments", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetMyAssignments(System.Nullable`1[System.Guid], System.String, System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:34:15.556 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__currentUser_Id_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."CategoryId", s."CreatedAt", s."CreatedById", s."Description", s."DueDate", s."Priority", s."Status0", s."Title", s."TaskId", s."UserId", t1."Id", u."Id", s0."TaskId", s0."UserId", s0."AssignedAt", s0."CompletedAt", s0."Status", s0."Id", s0."CreatedAt", s0."Email", s0."ManagerId", s0."PasswordHash", s0."RefreshToken", s0."RefreshTokenExpiryTime", s0."Username", t1."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."TaskId", t."UserId", t0."Id", t0."CategoryId", t0."CreatedAt", t0."CreatedById", t0."Description", t0."DueDate", t0."Priority", t0."Status" AS "Status0", t0."Title"
+    FROM "TaskAssignments" AS t
+    INNER JOIN "Tasks" AS t0 ON t."TaskId" = t0."Id"
+    WHERE t."UserId" = @__currentUser_Id_0
+    ORDER BY t0."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS s
+LEFT JOIN "TaskCategories" AS t1 ON s."CategoryId" = t1."Id"
+INNER JOIN "Users" AS u ON s."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s0 ON s."Id" = s0."TaskId"
+ORDER BY s."CreatedAt", s."TaskId", s."UserId", s."Id", t1."Id", u."Id", s0."TaskId", s0."UserId"
+2025-10-14 15:34:19.616 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp) in 4099.86ms
+2025-10-14 15:34:19.619 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:34:19.678 +03:00 [ERR] Unhandled exception occurred while processing /api/Task/assignments
+System.Collections.Generic.KeyNotFoundException: User has no assignments
+   at ToDoApp.Services.TaskService.GetMyAssignmentsAsync(CurrentUserContext currentUser, Nullable`1 categoryId, String searchTitle, Nullable`1 status, String sortBy, Boolean ascending, Int32 page, Int32 pageSize, Nullable`1 dueDateFrom, Nullable`1 dueDateTo) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Services\TaskService.cs:line 135
+   at ToDoApp.Api.Controllers.TaskController.GetMyAssignments(Nullable`1 categoryId, String searchTitle, Nullable`1 status, String sortBy, Boolean ascending, Int32 page, Int32 pageSize, Nullable`1 dueDateFrom, Nullable`1 dueDateTo) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Api\Controllers\TaskController.cs:line 73
+   at lambda_method251(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ToDoApp.Exceptions.GlobalExceptionHandler.InvokeAsync(HttpContext context) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Exceptions\GlobalExceptionHandler.cs:line 27
+2025-10-14 15:34:19.686 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 404 null application/json; charset=utf-8 4188.6689ms
+2025-10-14 15:34:32.878 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7024/api/Task/assignments - null null
+2025-10-14 15:34:32.890 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:34:32.892 +03:00 [INF] Route matched with {action = "GetMyAssignments", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] GetMyAssignments(System.Nullable`1[System.Guid], System.String, System.Nullable`1[ToDoApp.Models.TaskAssignmentStatus], System.String, Boolean, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:34:32.902 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__currentUser_Id_0='?' (DbType = Guid), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."CategoryId", s."CreatedAt", s."CreatedById", s."Description", s."DueDate", s."Priority", s."Status0", s."Title", s."TaskId", s."UserId", t1."Id", u."Id", s0."TaskId", s0."UserId", s0."AssignedAt", s0."CompletedAt", s0."Status", s0."Id", s0."CreatedAt", s0."Email", s0."ManagerId", s0."PasswordHash", s0."RefreshToken", s0."RefreshTokenExpiryTime", s0."Username", t1."Name", u."CreatedAt", u."Email", u."ManagerId", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Username"
+FROM (
+    SELECT t."TaskId", t."UserId", t0."Id", t0."CategoryId", t0."CreatedAt", t0."CreatedById", t0."Description", t0."DueDate", t0."Priority", t0."Status" AS "Status0", t0."Title"
+    FROM "TaskAssignments" AS t
+    INNER JOIN "Tasks" AS t0 ON t."TaskId" = t0."Id"
+    WHERE t."UserId" = @__currentUser_Id_0
+    ORDER BY t0."CreatedAt"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS s
+LEFT JOIN "TaskCategories" AS t1 ON s."CategoryId" = t1."Id"
+INNER JOIN "Users" AS u ON s."CreatedById" = u."Id"
+LEFT JOIN (
+    SELECT t2."TaskId", t2."UserId", t2."AssignedAt", t2."CompletedAt", t2."Status", u0."Id", u0."CreatedAt", u0."Email", u0."ManagerId", u0."PasswordHash", u0."RefreshToken", u0."RefreshTokenExpiryTime", u0."Username"
+    FROM "TaskAssignments" AS t2
+    INNER JOIN "Users" AS u0 ON t2."UserId" = u0."Id"
+) AS s0 ON s."Id" = s0."TaskId"
+ORDER BY s."CreatedAt", s."TaskId", s."UserId", s."Id", t1."Id", u."Id", s0."TaskId", s0."UserId"
+2025-10-14 15:35:07.180 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp) in 34284.2194ms
+2025-10-14 15:35:07.186 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.GetMyAssignments (ToDoApp)'
+2025-10-14 15:35:07.267 +03:00 [ERR] Unhandled exception occurred while processing /api/Task/assignments
+System.Collections.Generic.KeyNotFoundException: User has no assignments
+   at ToDoApp.Services.TaskService.GetMyAssignmentsAsync(CurrentUserContext currentUser, Nullable`1 categoryId, String searchTitle, Nullable`1 status, String sortBy, Boolean ascending, Int32 page, Int32 pageSize, Nullable`1 dueDateFrom, Nullable`1 dueDateTo) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Services\TaskService.cs:line 135
+   at ToDoApp.Api.Controllers.TaskController.GetMyAssignments(Nullable`1 categoryId, String searchTitle, Nullable`1 status, String sortBy, Boolean ascending, Int32 page, Int32 pageSize, Nullable`1 dueDateFrom, Nullable`1 dueDateTo) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Api\Controllers\TaskController.cs:line 73
+   at lambda_method251(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ToDoApp.Exceptions.GlobalExceptionHandler.InvokeAsync(HttpContext context) in C:\Users\user1\Desktop\Projeler-2\ToDoApp\Exceptions\GlobalExceptionHandler.cs:line 27
+2025-10-14 15:35:07.278 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7024/api/Task/assignments - 404 null application/json; charset=utf-8 34399.8315ms
+2025-10-14 15:35:21.420 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7024/api/Task/task-bysadsad - text/plain;charset=UTF-8 0
+2025-10-14 15:35:21.426 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:35:21.428 +03:00 [INF] Route matched with {action = "DeleteTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] DeleteTask(System.Guid) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:35:21.433 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-10-14 15:35:21.460 +03:00 [INF] Executed action ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp) in 30.7289ms
+2025-10-14 15:35:21.463 +03:00 [INF] Executed endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:35:21.464 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:7024/api/Task/task-bysadsad - 400 null application/problem+json; charset=utf-8 44.2493ms
+2025-10-14 15:35:38.333 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7024/api/Task/task-bye5cb6a99-f69f-43f3-a886-7d91ef8c09e0 - text/plain;charset=UTF-8 0
+2025-10-14 15:35:38.338 +03:00 [INF] Executing endpoint 'ToDoApp.Api.Controllers.TaskController.DeleteTask (ToDoApp)'
+2025-10-14 15:35:38.339 +03:00 [INF] Route matched with {action = "DeleteTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ToDoApp.DTOs.Task.TaskResponseDto]]] DeleteTask(System.Guid) on controller ToDoApp.Api.Controllers.TaskController (ToDoApp).
+2025-10-14 15:35:38.364 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__taskId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t1."Id", t1."CategoryId", t1."CreatedAt", t1."CreatedById", t1."Description", t1."DueDate", t1."Priority", t1."Status", t1."Title", t0."TaskId", t0."UserId", t0."AssignedAt", t0."CompletedAt", t0."Status"
+FROM (
+    SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+    FROM "Tasks" AS t
+    WHERE t."Id" = @__taskId_0
+    LIMIT 1
+) AS t1
+LEFT JOIN "TaskAssignments" AS t0 ON t1."Id" = t0."TaskId"
+ORDER BY t1."Id", t0."TaskId"
+2025-10-14 15:35:38.465 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__taskId_0='?' (DbType = Guid), @__currentUser_Id_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CategoryId", t."CreatedAt", t."CreatedById", t."Description", t."DueDate", t."Priority", t."Status", t."Title"
+FROM "Tasks" AS t
+WHERE t."Id" = @__taskId_0 AND t."CreatedById" = @__currentUser_Id_1
+LIMIT 1

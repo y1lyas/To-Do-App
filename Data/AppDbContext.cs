@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ToDoApp.Configuration;
 using ToDoApp.Extensions;
 using ToDoApp.Models;
 using ToDoApp.Models.Auth;
@@ -25,54 +26,11 @@ namespace ToDoApp.Infrastructure
             modelBuilder.Entity<Role>()
                 .HasKey(r => r.Id);
 
-            modelBuilder.Entity<UserRole>()
-                .HasKey(ur => new { ur.UserId, ur.RoleId });
+            modelBuilder.ApplyConfiguration(new AssignmentConfiguration());
 
-            modelBuilder.Entity<UserRole>()
-                .HasOne(ur => ur.User)
-                .WithMany(u => u.UserRoles)
-                .HasForeignKey(ur => ur.UserId);
+            modelBuilder.ApplyConfiguration(new UserRoleConfiguration());
 
-            modelBuilder.Entity<UserRole>()
-                .HasOne(ur => ur.Role)
-                .WithMany(r => r.UserRoles)
-                .HasForeignKey(ur => ur.RoleId);
-
-            modelBuilder.Entity<TaskItem>()
-                  .Property(t => t.CreatedAt)
-                  .HasDefaultValueSql("NOW()");
-
-
-            modelBuilder.Entity<TaskItem>()
-                  .Property(t => t.Priority)
-                  .HasDefaultValue(TaskPriority.Medium);
-
-            modelBuilder.Entity<TaskItem>()
-                  .HasOne(t => t.Category)
-                  .WithMany(c => c.Tasks)
-                  .HasForeignKey(t => t.CategoryId)
-                  .OnDelete(DeleteBehavior.SetNull);
-
-            modelBuilder.Entity<TaskAssignment>()
-                  .HasKey(ta => new { ta.TaskId, ta.UserId });
-
-            modelBuilder.Entity<TaskAssignment>()
-                  .HasOne(ta => ta.Task)
-                  .WithMany(t => t.Assignments)
-                  .HasForeignKey(ta => ta.TaskId);
-
-            modelBuilder.Entity<TaskAssignment>()
-                .HasOne(ta => ta.User)
-                .WithMany(u => u.TaskAssignments)
-                .HasForeignKey(ta => ta.UserId);
-
-            modelBuilder.Entity<TaskItem>()
-    
-                .HasOne(t => t.CreatedBy)
-                .WithMany() 
-                .HasForeignKey(t => t.CreatedById)
-                .OnDelete(DeleteBehavior.Restrict); 
-
+            modelBuilder.ApplyConfiguration(new TaskItemConfiguration());
 
         }
 

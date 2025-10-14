@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System.Globalization;
+using System.Threading.Tasks;
 using ToDoApp.DTOs.Task;
 using ToDoApp.Extensions;
 using ToDoApp.Infrastructure;
@@ -72,7 +73,7 @@ namespace ToDoApp.Services
             var task = await _context.Tasks
         .FirstOrDefaultAsync(t => t.Id == taskId && t.CreatedById == currentUser.Id);
 
-            if (task == null) return false;
+            if (task == null) throw new KeyNotFoundException("Task not found");
 
             _context.Tasks.Remove(task);
             await _context.SaveChangesAsync();
@@ -91,15 +92,16 @@ namespace ToDoApp.Services
             tasksQuery = tasksQuery.ApplyFilters(requesterRole: "Admin", userId: userId, categoryId, searchTitle, status, sortBy, ascending, page, pageSize, dueDateFrom, dueDateTo);
 
             var tasks = await tasksQuery.AsNoTracking().ToListAsync();
-
+            if (tasks.Count == 0) throw new KeyNotFoundException("No task available");
             return tasks.Select(TaskMapper.MapToDto);
 
         }
 
         public async Task<IEnumerable<TaskResponseDto>> GetByUserAsync(Guid requesterId, Guid? categoryId = null, string? searchTitle = null, TaskAssignmentStatus? status = null, string? sortBy = null, bool ascending = true, int page = 1, int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
         {
+
             var query = _context.Tasks
-                    .Where(t => t.CreatedById == requesterId && t.Status != TaskStatus.Archived && t.Status != TaskStatus.Deleted)
+                    .Where(t => t.CreatedById == requesterId)
                     .Include(t => t.Assignments)
                       .ThenInclude(a => a.User)
                    .Include(t => t.Category)
@@ -109,6 +111,7 @@ namespace ToDoApp.Services
             query = query.ApplyFilters(requesterRole: "User", userId: null, categoryId, searchTitle, status, sortBy, ascending, page, pageSize, dueDateFrom, dueDateTo);
 
             var tasks = await query.ToListAsync();
+            if (tasks.Count == 0) throw new KeyNotFoundException("User has no tasks");
             return tasks.Select(TaskMapper.MapToDto);
         }
         public async Task<IEnumerable<TaskResponseDto>> GetMyAssignmentsAsync(CurrentUserContext currentUser, Guid? categoryId = null, string? searchTitle = null, TaskAssignmentStatus? status = null, string? sortBy = null, bool ascending = true, int page = 1, int pageSize = 20, DateTime? dueDateFrom = null, DateTime? dueDateTo = null)
@@ -125,9 +128,11 @@ namespace ToDoApp.Services
                 .Select(a => a.Task)
                 .AsQueryable();
 
+
             query = query.ApplyFilters(requesterRole: "User",userId: null,categoryId,searchTitle,status,sortBy,ascending,page,pageSize,dueDateFrom,dueDateTo);
 
             var tasks = await query.ToListAsync();
+            if (tasks.Count == 0) throw new KeyNotFoundException("User has no assignments");
             return tasks.Select(TaskMapper.MapToDto);
         }
 
@@ -138,7 +143,7 @@ namespace ToDoApp.Services
               .Include(t => t.Category)
               .FirstOrDefaultAsync(t => t.Id == taskId && t.Assignments.Any(a => a.UserId == currentUser.Id));
 
-            if (task == null) return null;
+            if (task == null) throw new KeyNotFoundException("Task not found");
 
             task.Title = dto.Title ?? task.Title;
             task.Description = dto.Description ?? task.Description;
@@ -199,30 +204,31 @@ namespace ToDoApp.Services
             );
 
             var tasks = await query.ToListAsync();
+            if (tasks.Count == 0) throw new KeyNotFoundException("No task available");
             return tasks.Select(TaskMapper.MapToDto);
         } 
         public async Task<TaskResponseDto?> CreateTaskForSubordinatesAsync(Guid captainId, TaskCreateDto dto, List<Guid>? subordinateIds = null)
         {
             if (subordinateIds != null && subordinateIds.Any())
             {
-                     subordinateIds = await _context.Users
-                    .Where(u => subordinateIds.Contains(u.Id) && u.ManagerId == captainId)
-                    .Select(u => u.Id)
-                    .ToListAsync();
+                subordinateIds = await _context.Users
+               .Where(u => subordinateIds.Contains(u.Id) && u.ManagerId == captainId)
+               .Select(u => u.Id)
+               .ToListAsync();
             }
 
-            var task = new TaskItem
-            {
-                Id = Guid.NewGuid(),
-                Title = dto.Title,
-                Description = dto.Description,
-                DueDate = dto.DueDate,
-                Priority = dto.Priority,
-                CreatedAt = DateTime.UtcNow,
-                CreatedById = captainId,
-                CategoryId = dto.CategoryId
+                var task = new TaskItem
+                {
+                    Id = Guid.NewGuid(),
+                    Title = dto.Title,
+                    Description = dto.Description,
+                    DueDate = dto.DueDate,
+                    Priority = dto.Priority,
+                    CreatedAt = DateTime.UtcNow,
+                    CreatedById = captainId,
+                    CategoryId = dto.CategoryId
 
-            };
+                };
 
             if (subordinateIds != null && subordinateIds.Any())
             {
@@ -260,7 +266,7 @@ namespace ToDoApp.Services
                 .Include(t => t.CreatedBy)
                 .FirstOrDefaultAsync(t => t.Id == taskId);
 
-            if (task == null) return null;
+            if (task == null) throw new KeyNotFoundException("Task not found");
 
             if (task.Assignments.Any(a => a.UserId == userId)) return TaskMapper.MapToDto(task);
 
@@ -274,7 +280,6 @@ namespace ToDoApp.Services
             SyncTaskStatus(task);
             await _context.SaveChangesAsync();
 
-            // Yeni eklenen user'ları da yükleniyor
             await _context.Entry(task)
                .Collection(t => t.Assignments)
                .Query()
@@ -291,7 +296,7 @@ namespace ToDoApp.Services
              .ThenInclude(t => t.User)
              .FirstOrDefaultAsync(a => a.TaskId == taskId && a.UserId == userId);
 
-            if (assignment == null) return null;
+            if (assignment == null) throw new KeyNotFoundException("Assignment not found");
 
             _context.TaskAssignments.Remove(assignment);
 
@@ -309,8 +314,8 @@ namespace ToDoApp.Services
                 .ThenInclude(t => t.User)
                 .FirstOrDefaultAsync(a => a.TaskId == taskId && a.UserId == currentUser.Id);
 
-            if (assignment == null)
-                return null;
+            if (assignment == null) throw new KeyNotFoundException("Task not found");
+
             _context.TaskAssignments.Update(assignment);
             assignment.Status = newStatus;
             assignment.CompletedAt = newStatus == TaskAssignmentStatus.Completed ? DateTime.UtcNow : null;
